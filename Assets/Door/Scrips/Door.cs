@@ -17,10 +17,11 @@ public class Door : MonoBehaviour
     private openType type;
 
     private bool isOpen = false;
+    private Vector3 initalPos;
 
     void Start()
     {
-
+        initalPos = this.transform.position;
     }
 
     //CardKeyから呼ばれる
@@ -49,13 +50,13 @@ public class Door : MonoBehaviour
         {
             case openType.Left:
                 currentPos += new Vector3(0f, 0f, -movingSpeed);
-                currentPos.z = Mathf.Clamp(currentPos.z, -movingDistance, 0);
+                currentPos.z = Mathf.Clamp(currentPos.z, initalPos .z + -movingDistance, initalPos.z + 0);
                 
                 break;
 
             case openType.Right:
                 currentPos += new Vector3(0f, 0f, movingSpeed);
-                currentPos.z = Mathf.Clamp(currentPos.z, 0, movingDistance);
+                currentPos.z = Mathf.Clamp(currentPos.z, initalPos.z + 0, initalPos.z + movingDistance);
 
                 break;
         }
@@ -71,13 +72,13 @@ public class Door : MonoBehaviour
         {
             case openType.Left:
                 currentPos += new Vector3(0f, 0f, movingSpeed);
-                currentPos.z = Mathf.Clamp(currentPos.z, -movingDistance, 0);
+                currentPos.z = Mathf.Clamp(currentPos.z, initalPos.z + -movingDistance, initalPos.z + 0);
 
                 break;
 
             case openType.Right:
                 currentPos += new Vector3(0f, 0f, -movingSpeed);
-                currentPos.z = Mathf.Clamp(currentPos.z, 0, movingDistance);
+                currentPos.z = Mathf.Clamp(currentPos.z, initalPos.z + 0, initalPos.z + movingDistance);
 
                 break;
         }

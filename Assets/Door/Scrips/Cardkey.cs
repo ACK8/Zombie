@@ -8,6 +8,9 @@ public class Cardkey : MonoBehaviour
     [SerializeField]
     private int cardKeyID;
 
+    private float a;
+    private bool isTouched = false;
+
     void Start()
     {
 
@@ -15,16 +18,26 @@ public class Cardkey : MonoBehaviour
 
     void Update()
     {
+        if (isTouched)
+        {
+            a += Time.deltaTime;
+        }
 
+        if(2f < a)
+        {
+            a = 0f;
+            isTouched = false;
+        }
     }
 
     void OnTriggerEnter(Collider hit)
     {
         if (hit.tag == "Key")
         {
-            //カードキーIDとカードIDが同じ時にドアを施錠
-            if (cardKeyID == hit.GetComponent<Key>().cardID)
+            //カードキーIDとカードIDが同じ、カードが触れていない時にドアを施錠
+            if (cardKeyID == hit.GetComponent<Key>().cardID && !isTouched)
             {
+                isTouched = true;
                 doorScript.MoveDoor();
             }
         }
