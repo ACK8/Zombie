@@ -23,7 +23,7 @@ public class Cardkey : MonoBehaviour
             a += Time.deltaTime;
         }
 
-        if(2f < a)
+        if (2f < a)
         {
             a = 0f;
             isTouched = false;

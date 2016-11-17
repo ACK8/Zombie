@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Door : MonoBehaviour
 {
@@ -42,100 +41,75 @@ public class Door : MonoBehaviour
         {
             CloseDoor();
         }
-
-        print(isNotClose);
-        if (isNotClose)
-        {
-            Reopen();
-        }
     }
 
     void OpenDoor()
     {
-        Vector3 currentPos = transform.position;
+        Vector3 targetPos = transform.position;
 
         if (isRotate90D)
         {
             //90度回転しているときX座標を移動
-            currentPos += new Vector3(-movingSpeed * Time.deltaTime, 0f, 0f);
-            currentPos.x = Mathf.Clamp(currentPos.x, initalPos.x + -movingDistance, initalPos.x);
+            targetPos += new Vector3(-movingSpeed * Time.deltaTime, 0f, 0f);
+            targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x + -movingDistance, initalPos.x);
         }
         else
         {
             //0°のときはZ座標を移動
-            currentPos += new Vector3(0f, 0f, -movingSpeed * Time.deltaTime);
-            currentPos.z = Mathf.Clamp(currentPos.z, initalPos.z + -movingDistance, initalPos.z);
+            targetPos += new Vector3(0f, 0f, -movingSpeed * Time.deltaTime);
+            targetPos.z = Mathf.Clamp(targetPos.z, initalPos.z + -movingDistance, initalPos.z);
         }
 
-        transform.position = currentPos;
+        transform.position = targetPos;
     }
 
     void CloseDoor()
     {
-        Vector3 currentPos = transform.position;
+        Vector3 targetPos = transform.position;
 
         if (isRotate90D)
         {
             //90度回転しているときX座標を移動
-            currentPos += new Vector3(movingSpeed * Time.deltaTime, 0f);
-            currentPos.x = Mathf.Clamp(currentPos.x, initalPos.x + -movingDistance, initalPos.x);
+            targetPos += new Vector3(movingSpeed * Time.deltaTime, 0f);
+            targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x + -movingDistance, initalPos.x);
+
+
+            if (transform.position.x == targetPos.x)
+            {
+                isCloseing = false;
+            }
+            else
+            {
+                isCloseing = true;
+            }
         }
         else
         {
             //0°のときはZ座標を移動
-            currentPos += new Vector3(0f, 0f, movingSpeed * Time.deltaTime);
-            currentPos.z = Mathf.Clamp(currentPos.z, initalPos.z + -movingDistance, initalPos.z);
+            targetPos += new Vector3(0f, 0f, movingSpeed * Time.deltaTime);
+            targetPos.z = Mathf.Clamp(targetPos.z, initalPos.z + -movingDistance, initalPos.z);
+
+            if (transform.position.z == targetPos.z)
+            {
+                isCloseing = false;
+            }
+            else
+            {
+                isCloseing = true;
+            }
         }
 
 
-        if (transform.position.z == currentPos.z)
-        {
-            isCloseing = false;
-        }
-        else
-        {
-            isCloseing = true;
-        }
-
-        transform.position = currentPos;
-    }
-
-    void Reopen()
-    {
-        Vector3 currentPos = transform.position;
-
-        if (isRotate90D)
-        {
-            //90度回転しているときX座標を移動
-            currentPos += new Vector3(-movingSpeed * Time.deltaTime, 0f, 0f);
-            currentPos.x = Mathf.Clamp(currentPos.x, initalPos.x + -movingDistance, initalPos.x);
-        }
-        else
-        {
-            //0°のときはZ座標を移動
-            currentPos += new Vector3(0f, 0f, -movingSpeed * Time.deltaTime);
-            currentPos.z = Mathf.Clamp(currentPos.z, initalPos.z + -movingDistance, initalPos.z);
-        }
-
-        if (currentPos.z == (initalPos.z + movingDistance))
-        {
-            isNotClose = false;
-        }
-
-        print("aaaaaaaaaaaaaaa");
-
-        transform.position = currentPos;
+        transform.position = targetPos;
     }
 
     void OnCollisionEnter(Collision hit)
     {
-        print(hit.gameObject.tag);
-        if (hit.gameObject.tag != "Wall" || hit.gameObject.tag != "Key" || hit.gameObject.tag != "CardKey")
+        if (hit.gameObject.tag != "Wall" && hit.gameObject.tag != "Key" && hit.gameObject.tag != "CardKey")
         {
             if (isCloseing)
             {
-                print("OnCollisionEnter if  " + hit.gameObject.name);
-                isNotClose = true;
+                isOpen = true;
             }
         }
     }
