@@ -43,12 +43,11 @@ public class Door : MonoBehaviour
             CloseDoor();
         }
 
+        print(isNotClose);
         if (isNotClose)
         {
             Reopen();
         }
-
-        print("isCloseing: " + isCloseing);
     }
 
     void OpenDoor()
@@ -108,7 +107,7 @@ public class Door : MonoBehaviour
         if (isRotate90D)
         {
             //90度回転しているときX座標を移動
-            currentPos += new Vector3(-movingSpeed * Time.deltaTime, 0f);
+            currentPos += new Vector3(-movingSpeed * Time.deltaTime, 0f, 0f);
             currentPos.x = Mathf.Clamp(currentPos.x, initalPos.x + -movingDistance, initalPos.x);
         }
         else
@@ -123,16 +122,19 @@ public class Door : MonoBehaviour
             isNotClose = false;
         }
 
+        print("aaaaaaaaaaaaaaa");
+
         transform.position = currentPos;
     }
 
     void OnCollisionEnter(Collision hit)
     {
-        if (hit.collider.tag != "Wall" || hit.collider.tag != "Key" || hit.collider.tag != "CardKey")
+        print(hit.gameObject.tag);
+        if (hit.gameObject.tag != "Wall" || hit.gameObject.tag != "Key" || hit.gameObject.tag != "CardKey")
         {
             if (isCloseing)
             {
-                print("OnCollisionEnter if  " + hit.collider.name);
+                print("OnCollisionEnter if  " + hit.gameObject.name);
                 isNotClose = true;
             }
         }
