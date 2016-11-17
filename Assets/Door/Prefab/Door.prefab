@@ -22,7 +22,7 @@ GameObject:
   - 33: {fileID: 33000011533269952}
   - 65: {fileID: 65000010829682032}
   - 23: {fileID: 23000013857682312}
-  - 95: {fileID: 95000014177384030}
+  - 54: {fileID: 54000012714216296}
   - 114: {fileID: 114000012630342434}
   m_Layer: 0
   m_Name: Door
@@ -80,6 +80,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011320401634}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54000012714216296
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011320401634}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!65 &65000010829682032
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -92,23 +107,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &95000014177384030
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011320401634}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e7e1cc48124eb644082d0a5aeb29ebab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000012630342434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,5 +120,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkObstacleObj: {fileID: 1000012357622310, guid: 1e211590996076c44835d5605fb45067,
     type: 2}
-  movingSpeed: 3
+  movingSpeed: 1.5
   isRotate90D: 0
