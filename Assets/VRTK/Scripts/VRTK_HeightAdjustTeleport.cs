@@ -68,7 +68,7 @@ namespace VRTK
                 {
                     playerPresence = gameObject.AddComponent<VRTK_PlayerPresence>();
                 }
-                playerPresence.SetFallingPhysicsOnlyParams(true);
+                //playerPresence.SetFallingPhysicsOnlyParams(true);
             }
         }
 
