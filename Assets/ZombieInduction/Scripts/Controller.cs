@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Controller : MonoBehaviour
 {
-	[SerializeField]
-	private Transform Sphere;
     [SerializeField]
     private float maxRayDist = 100f;
 
@@ -22,17 +20,20 @@ public class Controller : MonoBehaviour
 
     void Update()
 	{
-		var device = SteamVR_Controller.Input((int) trackedObject.index);
+		//var device = SteamVR_Controller.Input((int) trackedObject.index);
 
-		ray.direction = this.transform.forward;
-		ray.origin = this.transform.position;
+		//ray.direction = this.transform.forward;
+		//ray.origin = this.transform.position;
 
-		line.SetPosition (0, ray.origin);
-		line.SetPosition (1, ray.GetPoint(maxRayDist));
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        //line.SetPosition (0, ray.origin);
+		//line.SetPosition (1, ray.GetPoint(maxRayDist));
        
         if (Physics.Raycast(ray, out hit, maxRayDist))
 		{
-			if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+            //if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+            if(Input.GetMouseButtonDown(0))
             {
                 if (hit.collider.tag == "Zombie")
                 {

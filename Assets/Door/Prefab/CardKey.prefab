@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000011995192822}
   - 114: {fileID: 114000012464279974}
   m_Layer: 0
-  m_Name: Card key
+  m_Name: CardKey
   m_TagString: CardKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,4 +103,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorScript: {fileID: 0}
-  cardKeyID: 100
+  cardKeyID: 0

@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9284b46ce5e73644d95a42b0534e956e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardID: 100
+  cardID: 0
 --- !u!114 &114000013057310490
 MonoBehaviour:
   m_ObjectHideFlags: 1

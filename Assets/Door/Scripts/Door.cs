@@ -3,14 +3,12 @@
 public class Door : MonoBehaviour
 {
     [SerializeField]
-    private GameObject checkObstacleObj;
-    [SerializeField]
     private float movingSpeed = 0f;
     [SerializeField]
     private bool isRotate90D = false;   //ドアが90度回転しているか
 
     private Vector3 initalPos;
-    private float movingDistance = 1f;
+    private float moveingDistance = 1;  //開く距離
     private bool isOpen = false;    //現在ドアが開いているか
     private bool isCloseing = false;    //ドアが閉じているときtrue
     private bool isNotClose = false;    //ドアが閉まらないときにtrue
@@ -18,11 +16,6 @@ public class Door : MonoBehaviour
     void Start()
     {
         initalPos = this.transform.position;
-
-        GameObject check = Instantiate(checkObstacleObj) as GameObject;
-        check.transform.position = this.transform.position;
-        check.transform.rotation = this.transform.rotation;
-        check.GetComponent<BoxCollider>().size = transform.localScale;
     }
 
     //CardKeyから呼ばれる
@@ -43,7 +36,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    void OpenDoor()
+    public void OpenDoor()
     {
         Vector3 targetPos = transform.position;
 
@@ -51,19 +44,19 @@ public class Door : MonoBehaviour
         {
             //90度回転しているときX座標を移動
             targetPos += new Vector3(-movingSpeed * Time.deltaTime, 0f, 0f);
-            targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x + -movingDistance, initalPos.x);
+            targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x + -moveingDistance, initalPos.x);
         }
         else
         {
             //0°のときはZ座標を移動
             targetPos += new Vector3(0f, 0f, -movingSpeed * Time.deltaTime);
-            targetPos.z = Mathf.Clamp(targetPos.z, initalPos.z + -movingDistance, initalPos.z);
+            targetPos.z = Mathf.Clamp(targetPos.z, initalPos.z + -moveingDistance, initalPos.z);
         }
 
         transform.position = targetPos;
     }
 
-    void CloseDoor()
+    public void CloseDoor()
     {
         Vector3 targetPos = transform.position;
 
@@ -71,7 +64,7 @@ public class Door : MonoBehaviour
         {
             //90度回転しているときX座標を移動
             targetPos += new Vector3(movingSpeed * Time.deltaTime, 0f);
-            targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x + -movingDistance, initalPos.x);
+            targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x + -moveingDistance, initalPos.x);
 
 
             if (transform.position.x == targetPos.x)
@@ -87,7 +80,7 @@ public class Door : MonoBehaviour
         {
             //0°のときはZ座標を移動
             targetPos += new Vector3(0f, 0f, movingSpeed * Time.deltaTime);
-            targetPos.z = Mathf.Clamp(targetPos.z, initalPos.z + -movingDistance, initalPos.z);
+            targetPos.z = Mathf.Clamp(targetPos.z, initalPos.z + -moveingDistance, initalPos.z);
 
             if (transform.position.z == targetPos.z)
             {
@@ -98,8 +91,7 @@ public class Door : MonoBehaviour
                 isCloseing = true;
             }
         }
-
-
+        
         transform.position = targetPos;
     }
 
