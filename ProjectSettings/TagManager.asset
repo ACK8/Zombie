@@ -4,13 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Area
-  - Return
   - Wall
   - Floor
   - CardKey
   - Key
   - Zombie
+  - Injection
   layers:
   - Default
   - TransparentFX

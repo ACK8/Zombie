@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//手に装備する種類
 public enum HandType
 {
     VRController,
@@ -8,6 +9,7 @@ public enum HandType
     OperatingDevice,
 }
 
+//手関係の処理をコントロールするクラス
 public class HandController : MonoBehaviour
 {
     public HandType handType;
@@ -15,7 +17,6 @@ public class HandController : MonoBehaviour
     public GameObject syringeObject;
     public GameObject operatingDeviceObject;
 
-    private GameObject currentObject;
     private SteamVR_TrackedObject trackedComponent;
     private Syringe syringeComponent;
 
@@ -23,27 +24,33 @@ public class HandController : MonoBehaviour
     {
         trackedComponent = GetComponent<SteamVR_TrackedObject>();
 
+        vrControllerObject.SetActive(false);
+
+        //注射器を一旦停止
+        syringeObject.SetActive(false);
+        syringeComponent = syringeObject.GetComponent<Syringe>();
+        syringeComponent.enabled = false;
+
+        //operatingDeviceObject.SetActive(false);
+
         switch (handType)
         {
             case HandType.VRController:
-                currentObject = Instantiate(vrControllerObject);
+                vrControllerObject.SetActive(true);
+
                 break;
 
             case HandType.Syringe:
-                Debug.Log("Syringe");
+                syringeObject.SetActive(true);
+                syringeComponent.enabled = true;
 
-                currentObject = Instantiate(syringeObject);
-                syringeComponent = currentObject.GetComponent<Syringe>();
-                
                 break;
 
             case HandType.OperatingDevice:
-                currentObject = Instantiate(operatingDeviceObject);
+                operatingDeviceObject.SetActive(true);
 
                 break;
         }
-
-        currentObject.transform.SetParent(transform);
     }
 
     void Update()

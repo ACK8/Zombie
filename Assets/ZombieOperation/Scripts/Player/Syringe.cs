@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//注射器関係の処理をする
 public class Syringe : MonoBehaviour
 {
-    CapsuleCollider injectionJudgment;
+    public GameObject injectionColliderObject; //注射の当たり判定が入っているオブジェクト
+
+    private CapsuleCollider injectionJudgment; //注射中を判定する用のコライダー
 
     void Awake()
     {
-        injectionJudgment = GetComponent<CapsuleCollider>();
+        injectionJudgment = injectionColliderObject.GetComponent<CapsuleCollider>();
         injectionJudgment.enabled = false;
     }
 
@@ -15,15 +18,6 @@ public class Syringe : MonoBehaviour
     {
 	
 	}
-
-    void OnCollisionStay(Collision collisionInfo)
-    {
-        Debug.Log("Hit");
-        if(collisionInfo.transform.tag == "Zombie")
-        {
-
-        }
-    }
 
     //注射をしている状態にする
     public void OnInjection()
