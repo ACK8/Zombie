@@ -4,11 +4,11 @@ using System.Collections;
 public class ElevatorCardkey : MonoBehaviour
 {
     [SerializeField]
-    private ElevatorDoor doorScript;
+    private ElevatorDoor[] doorScript = new ElevatorDoor[2];
     [SerializeField]
     private int cardKeyID;
 
-    private float a;
+    private float timeCount;
     private bool isTouched = false;
 
     void Start()
@@ -20,12 +20,12 @@ public class ElevatorCardkey : MonoBehaviour
     {
         if (isTouched)
         {
-            a += Time.deltaTime;
+            timeCount += Time.deltaTime;
         }
 
-        if (2f < a)
+        if (1.5f < timeCount)
         {
-            a = 0f;
+            timeCount = 0f;
             isTouched = false;
         }
     }
@@ -38,7 +38,11 @@ public class ElevatorCardkey : MonoBehaviour
             if (cardKeyID == hit.GetComponent<Key>().cardID && !isTouched)
             {
                 isTouched = true;
-                doorScript.MoveDoor();
+
+                for (int i = 0; i < doorScript.Length; i++)
+                {
+                    doorScript[i].MoveDoor();
+                }
             }
         }
     }
