@@ -41,7 +41,7 @@ public class ZombieInduction : MonoBehaviour
                 {
                     if (m_Zombie != null)
                     {
-                        m_Zombie.target = hit.point;
+                        m_Zombie.targetPos = hit.point;
                         m_Zombie.isMove = true;
                     }
                 }
