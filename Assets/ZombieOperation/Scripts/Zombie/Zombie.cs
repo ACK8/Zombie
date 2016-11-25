@@ -3,8 +3,11 @@ using System.Collections;
 
 public class Zombie : MonoBehaviour
 {
+    [SerializeField]
+    private float zombieChangeTime = 3f;    //注射時、ゾンビに変化する時間
+
     private NavMeshAgent navMesh;
-    private Vector3 targetPos = Vector3.zero;
+    private Vector3 _targetPos = Vector3.zero;
     private float injectionVolume = 0f;   //ゾンビ薬の注入量
     private bool _isMove = false;
     private bool _isZombie = false;
@@ -16,11 +19,16 @@ public class Zombie : MonoBehaviour
 
     void Update()
     {
-        //ゾンビ誘導処理
-        Induction();
-
-        //注射処理
-        Injection();
+        if (_isZombie)
+        {
+            //ゾンビ誘導処理
+            Induction();
+        }
+        else
+        {
+            //注射処理
+            Injection();
+        }
     }
 
     //ゾンビ誘導処理
@@ -28,11 +36,11 @@ public class Zombie : MonoBehaviour
     {
         if (isMove)
         {
-            navMesh.SetDestination(targetPos);
+            navMesh.SetDestination(_targetPos);
         }
 
         //目的地に到着
-        if (Vector3.Distance(this.transform.position, targetPos) <= 0.9f)
+        if (Vector3.Distance(this.transform.position, _targetPos) <= 0.9f)
         {
             _isMove = false;
         }
@@ -58,10 +66,10 @@ public class Zombie : MonoBehaviour
 
 
     //目的座標(誘導用)
-    public Vector3 target
+    public Vector3 targetPos
     {
-        get { return targetPos; }
-        set { targetPos = value; }
+        get { return _targetPos; }
+        set { _targetPos = value; }
     }
 
     //NavMeshで移動しているか(誘導用)
