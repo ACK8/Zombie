@@ -15,10 +15,11 @@ public class HandController : MonoBehaviour
     public HandType handType;
     public GameObject vrControllerObject;
     public GameObject syringeObject;
-    public GameObject operatingDeviceObject;
+    public GameObject operatingObject;
 
     private SteamVR_TrackedObject trackedComponent;
     private Syringe syringeComponent;
+    private Operating operatingComponent;
 
     void Start ()
     {
@@ -31,7 +32,10 @@ public class HandController : MonoBehaviour
         syringeComponent = syringeObject.GetComponent<Syringe>();
         syringeComponent.enabled = false;
 
-        //operatingDeviceObject.SetActive(false);
+        //操作器を一旦停止
+        operatingObject.SetActive(false);
+        operatingComponent = operatingObject.GetComponent<Operating>();
+        operatingComponent.enabled = false;
 
         switch (handType)
         {
@@ -47,7 +51,8 @@ public class HandController : MonoBehaviour
                 break;
 
             case HandType.OperatingDevice:
-                operatingDeviceObject.SetActive(true);
+                operatingObject.SetActive(true);
+                operatingComponent.enabled = true;
 
                 break;
         }
@@ -57,12 +62,14 @@ public class HandController : MonoBehaviour
     {
         var device = SteamVR_Controller.Input((int)trackedComponent.index);
 
+        //手に持ってるごとの処理
         switch (handType)
         {
             case HandType.VRController:
                 break;
 
             case HandType.Syringe:
+
                 //注射を打つ
                 if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
                 {
@@ -77,7 +84,34 @@ public class HandController : MonoBehaviour
 
             case HandType.OperatingDevice:
 
+                //命令を決定
+                if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+                {
+                    operatingComponent.Decision();
+                }
+
                 break;
+        }
+
+        //注射器と操作器の入れ替え
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
+        {
+            if(handType == HandType.Syringe)
+            {
+                handType = HandType.OperatingDevice;
+                syringeObject.SetActive(false);
+                syringeComponent.enabled = false;
+                operatingObject.SetActive(true);
+                operatingComponent.enabled = true;
+            }
+            else if(handType == HandType.OperatingDevice)
+            {
+                handType = HandType.Syringe;
+                operatingObject.SetActive(false);
+                operatingComponent.enabled = false;
+                syringeObject.SetActive(true);
+                syringeComponent.enabled = true;
+            }
         }
     }
 }

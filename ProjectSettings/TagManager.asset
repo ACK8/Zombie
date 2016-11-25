@@ -10,6 +10,7 @@ TagManager:
   - Key
   - Zombie
   - Injection
+  - SelectionTarget
   layers:
   - Default
   - TransparentFX
