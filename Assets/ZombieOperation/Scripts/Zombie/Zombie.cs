@@ -4,7 +4,7 @@ using System.Collections;
 public class Zombie : MonoBehaviour
 {
     [SerializeField]
-    private float zombieChangeTime = 3f;    //注射時、ゾンビに変化する時間
+    private float zombieChangeTime = 2.5f;    //注射時、ゾンビに変化する時間
 
     private NavMeshAgent navMesh;
     private Vector3 _targetPos = Vector3.zero;
@@ -58,7 +58,7 @@ public class Zombie : MonoBehaviour
     //注射処理
     void Injection()
     {
-        if (3f <= injectionVolume)
+        if (zombieChangeTime <= injectionVolume)
         {
             _isZombie = true;
         }
