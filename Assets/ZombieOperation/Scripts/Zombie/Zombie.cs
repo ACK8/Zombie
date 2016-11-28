@@ -7,22 +7,27 @@ public class Zombie : MonoBehaviour
     private float zombieChangeTime = 2.5f;    //注射時、ゾンビに変化する時間
 
     private NavMeshAgent navMesh;
-    private Vector3 _targetPos = Vector3.zero;
+    private CapsuleCollider capsuleCol;
+    private Vector3 targetPos = Vector3.zero;
+    private Vector3 _pushDistance = Vector3.zero;
+    private GameObject destructionTarget = null;
     private float injectionVolume = 0f;   //ゾンビ薬の注入量
+    private float navSpeed = 0f;
     private bool _isMove = false;
     private bool _isZombie = false;
 
     void Start()
     {
         navMesh = GetComponent<NavMeshAgent>();
+        navSpeed = navMesh.speed;
+        capsuleCol.enabled = false;
     }
 
     void Update()
     {
         if (_isZombie)
         {
-            //ゾンビ誘導処理
-            Induction();
+            Animation();
         }
         else
         {
@@ -31,28 +36,38 @@ public class Zombie : MonoBehaviour
         }
     }
 
+    //待機
+    public void Wait()
+    {
+        navMesh.speed = 0f;
+    }
+
     //ゾンビ誘導処理
-    void Induction()
+    public void Move(Vector3 target)
     {
         if (isMove)
         {
-            navMesh.SetDestination(_targetPos);
+            navMesh.speed = navSpeed;
+            navMesh.SetDestination(target);
         }
 
         //目的地に到着
-        if (Vector3.Distance(this.transform.position, _targetPos) <= 0.9f)
+        if (Vector3.Distance(this.transform.position, target) <= 0.9f)
         {
             _isMove = false;
         }
     }
 
-    void OnTriggerStay(Collider hit)
+    //障害物を破壊
+    public void Destruction(GameObject target)
     {
-        if (hit.tag == "Injection")
-        {
-            injectionVolume += Time.deltaTime;
-            print("injection" + injectionVolume);
-        }
+        destructionTarget = target;
+    }
+
+    //アニメーション   
+    void Animation()
+    {
+
     }
 
     //注射処理
@@ -64,12 +79,28 @@ public class Zombie : MonoBehaviour
         }
     }
 
-
-    //目的座標(誘導用)
-    public Vector3 targetPos
+    void OnTriggerEnter(Collider hit)
     {
-        get { return _targetPos; }
-        set { _targetPos = value; }
+        if (hit.tag == "Obstacle" && hit.gameObject == destructionTarget)
+        {
+
+        }
+    }
+
+    void OnTriggerStay(Collider hit)
+    {
+        if (hit.tag == "Injection" && !_isZombie)
+        {
+            injectionVolume += Time.deltaTime;
+        }
+    }
+
+
+    //障害物を押した距離
+    public Vector3 pushDistance
+    {
+        get { return _pushDistance; }
+        set { _pushDistance = value; }
     }
 
     //NavMeshで移動しているか(誘導用)
