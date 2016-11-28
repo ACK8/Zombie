@@ -54,6 +54,7 @@ GameObject:
   - 4: {fileID: 4000010292048430}
   - 114: {fileID: 114000011719835724}
   - 120: {fileID: 120000012861378060}
+  - 114: {fileID: 114000012358003308}
   m_Layer: 0
   m_Name: Operating
   m_TagString: Untagged
@@ -164,6 +165,18 @@ MonoBehaviour:
   rayPointObject: {fileID: 1000013134210112}
   selectionTarget: {fileID: 0}
   operatingType: 0
+--- !u!114 &114000012358003308
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014186817766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24a47758916d4ed43a106cd6795cabc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRayDist: 100
 --- !u!120 &120000012861378060
 LineRenderer:
   m_ObjectHideFlags: 1

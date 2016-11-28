@@ -11,6 +11,9 @@ TagManager:
   - Zombie
   - Injection
   - SelectionTarget
+  - ExcludeTeleport
+  - TeleportIgnore
+  - Map
   layers:
   - Default
   - TransparentFX

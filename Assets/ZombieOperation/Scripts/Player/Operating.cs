@@ -6,15 +6,17 @@ public enum OperatingType
     Wait,
     Move,
     Following,
-    PushObject,
+    Attack,
 }
 
 public class Operating : MonoBehaviour
 {
     public GameObject rayPointObject;
-    public GameObject selectionTarget;
+    public GameObject selectionTarget; //レイの先の当たり判定用
     public OperatingType operatingType;
 
+    private GameObject selectedZombie = null;
+    private GameObject selectedObject = null;
     private LineRenderer line;
     private RaycastHit hit;
     private Ray ray;
@@ -22,7 +24,6 @@ public class Operating : MonoBehaviour
     void Start ()
     {
         line = GetComponent<LineRenderer>();
-        //line.enabled = false;
     }
 	
 	void Update ()
@@ -33,26 +34,24 @@ public class Operating : MonoBehaviour
         line.SetPosition(0, ray.origin);
         line.SetPosition(1, ray.GetPoint(200));
         line.enabled = true;
+    }
 
+    public void Decision()
+    {
         if (Physics.Raycast(ray, out hit, 200.0f))
         {
             selectionTarget.transform.position = hit.point;
 
-            if (hit.collider.tag == "Zombie")
+            //ゾンビのGameObjectを取得
+            if (hit.transform.tag == "Zombie")
             {
-
-                //m_Zombie = hit.collider.gameObject.GetComponent<Zombie>();
+                selectedZombie = hit.transform.gameObject;
             }
 
-            if (hit.collider.tag == "Floor")
+            //選択対象のGameObject取得
+            if (hit.transform.tag == "Object")
             {
-                /*
-                if (m_Zombie != null)
-                {
-                    m_Zombie.target = hit.point;
-                    m_Zombie.isMove = true;
-                }
-                */
+                selectedObject = hit.transform.gameObject;
             }
         }
         else
@@ -60,45 +59,55 @@ public class Operating : MonoBehaviour
             selectionTarget.transform.position = Vector3.zero;
         }
 
-        switch (operatingType)
+        //ゾンビの命令を実行
+        if (selectedZombie != null)
         {
-            case OperatingType.Wait:
+            Zombie currentZombie = selectedZombie.GetComponent<Zombie>();
 
-                break;
+            //命令を実行
+            switch (operatingType)
+            {
+                case OperatingType.Wait:
 
-            case OperatingType.Move:
+                    break;
 
-                break;
+                case OperatingType.Move:
 
-            case OperatingType.Following:
+                    break;
 
-                break;
+                case OperatingType.Following:
 
-            case OperatingType.PushObject:
+                    break;
 
-                break;
+                case OperatingType.Attack:
+
+                    if (selectedObject != null)
+                    {
+
+                    }
+
+                    break;
+            }
         }
     }
 
-    public void Decision()
+    public void OperatingWait()
     {
-        switch (operatingType)
-        {
-            case OperatingType.Wait:
+        operatingType = OperatingType.Wait;
+    }
 
-                break;
+    public void OperatingMove()
+    {
+        operatingType = OperatingType.Move;
+    }
 
-            case OperatingType.Move:
+    public void OperatingFollowing()
+    {
+        operatingType = OperatingType.Following;
+    }
 
-                break;
-
-            case OperatingType.Following:
-
-                break;
-
-            case OperatingType.PushObject:
-
-                break;
-        }
+    public void OperatingAttack()
+    {
+        operatingType = OperatingType.Attack;
     }
 }
