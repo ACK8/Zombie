@@ -7,17 +7,17 @@ public class DestructionObject : MonoBehaviour {
     private int Hp;
     [SerializeField]
     private int decrease;
-	// Use this for initialization
+
 	void Start ()
     {
     }
-	
-	// Update is called once per frame
+
 	void Update ()
     {
 	
 	}
-    public void EnduranceVaule()
+
+    public void EnduranceValue()
     {
         if (Hp != 0)
         {
@@ -25,6 +25,7 @@ public class DestructionObject : MonoBehaviour {
         }else if(Hp<=0)
         {
             Hp = 0;
+            Destroy(this.gameObject);
         }
     }
 }
