@@ -21,9 +21,11 @@ GameObject:
   - 4: {fileID: 4000010556469110}
   - 33: {fileID: 33000011512211478}
   - 136: {fileID: 136000012136543416}
+  - 136: {fileID: 136000013754185592}
   - 23: {fileID: 23000014139113900}
   - 54: {fileID: 54000013142370060}
   - 195: {fileID: 195000010870099210}
+  - 95: {fileID: 95000010763925098}
   - 114: {fileID: 114000010101250994}
   m_Layer: 0
   m_Name: Zombie
@@ -96,6 +98,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &95000010763925098
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010724709634}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000010101250994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,6 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a908c1d26d6c4479bf99bc89b5545e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  capsuleCol: {fileID: 136000013754185592}
+  zombieChangeTime: 2.5
+  attackAnimRate: 0
 --- !u!136 &136000012136543416
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -120,6 +142,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &136000013754185592
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010724709634}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 1}
 --- !u!195 &195000010870099210
 NavMeshAgent:
   m_ObjectHideFlags: 1

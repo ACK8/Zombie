@@ -4,12 +4,15 @@ using System.Collections;
 public class Zombie : MonoBehaviour
 {
     [SerializeField]
+    private CapsuleCollider capsuleCol;
+    [SerializeField]
     private float zombieChangeTime = 2.5f;    //注射時、ゾンビに変化する時間
+    [SerializeField]
+    private float attackAnimRate; //攻撃が有効になるアニメーション時間
 
     private NavMeshAgent navMesh;
-    private CapsuleCollider capsuleCol;
+    private Animator anim;
     private Vector3 targetPos = Vector3.zero;
-    private Vector3 _pushDistance = Vector3.zero;
     private GameObject destructionTarget = null;
     private float injectionVolume = 0f;   //ゾンビ薬の注入量
     private float navSpeed = 0f;
@@ -19,6 +22,7 @@ public class Zombie : MonoBehaviour
     void Start()
     {
         navMesh = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         navSpeed = navMesh.speed;
         capsuleCol.enabled = false;
     }
@@ -45,7 +49,7 @@ public class Zombie : MonoBehaviour
     //ゾンビ誘導処理
     public void Move(Vector3 target)
     {
-        if (isMove)
+        //if (isMove)
         {
             navMesh.speed = navSpeed;
             navMesh.SetDestination(target);
@@ -53,6 +57,22 @@ public class Zombie : MonoBehaviour
 
         //目的地に到着
         if (Vector3.Distance(this.transform.position, target) <= 0.9f)
+        {
+            _isMove = false;
+        }
+    }
+
+    //プレイヤーに追従
+    public void Following(ref Vector3 playerPos)
+    {
+        //if (isMove)
+        {
+            navMesh.speed = navSpeed;
+            navMesh.SetDestination(playerPos);
+        }
+
+        //目的地に到着
+        if (Vector3.Distance(this.transform.position, playerPos) <= 2.0f)
         {
             _isMove = false;
         }
@@ -67,7 +87,20 @@ public class Zombie : MonoBehaviour
     //アニメーション   
     void Animation()
     {
+        anim.Update(0);
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
+        if (stateInfo.IsName("Base Layer.Attack"))
+        {
+            if (attackAnimRate <= stateInfo.normalizedTime && stateInfo.normalizedTime < (attackAnimRate + 0.01))
+            {
+                capsuleCol.enabled = true;
+            }
+            else
+            {
+                capsuleCol.enabled = false;
+            }
+        }
     }
 
     //注射処理
@@ -83,7 +116,7 @@ public class Zombie : MonoBehaviour
     {
         if (hit.tag == "Obstacle" && hit.gameObject == destructionTarget)
         {
-
+            hit.gameObject.GetComponent<DestructionObject>().EnduranceValue();
         }
     }
 
@@ -95,14 +128,7 @@ public class Zombie : MonoBehaviour
         }
     }
 
-
-    //障害物を押した距離
-    public Vector3 pushDistance
-    {
-        get { return _pushDistance; }
-        set { _pushDistance = value; }
-    }
-
+    
     //NavMeshで移動しているか(誘導用)
     public bool isMove
     {
