@@ -155,7 +155,7 @@ namespace VRTK
         {
             InteractButton(angle, ButtonEvent.click);
         }
-
+        
         public void UnClickButton(float angle)
         {
             InteractButton(angle, ButtonEvent.unclick);

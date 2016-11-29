@@ -37,7 +37,7 @@
 
 			/*
 			if (_Radius > distance(_Point, worldPos))
-			{
+			{                                      
 				o.Albedo = float4(0.0f, 0.0f, 1.0f, 1.0f);
 			}
 			else
