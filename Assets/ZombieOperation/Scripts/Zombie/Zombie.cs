@@ -49,7 +49,6 @@ public class Zombie : MonoBehaviour
     //ゾンビ誘導処理
     public void Move(Vector3 target)
     {
-        //if (isMove)
         {
             navMesh.speed = navSpeed;
             navMesh.SetDestination(target);
@@ -63,16 +62,15 @@ public class Zombie : MonoBehaviour
     }
 
     //プレイヤーに追従
-    public void Following(ref Vector3 playerPos)
+    public void Following(ref Transform playerPos)
     {
-        //if (isMove)
         {
             navMesh.speed = navSpeed;
-            navMesh.SetDestination(playerPos);
+            navMesh.SetDestination(playerPos.position);
         }
 
         //目的地に到着
-        if (Vector3.Distance(this.transform.position, playerPos) <= 2.0f)
+        if (Vector3.Distance(this.transform.position, playerPos.position) <= 2.0f)
         {
             _isMove = false;
         }

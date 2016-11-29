@@ -4,7 +4,7 @@
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
-		_Radius ("Radius", Float) = 0.0
+		_Radius ("Radius", Float) = 1.0
 		_Point ("Point", Vector) = (0.0, 0.0, 0.0, 0.0)
 	}
 	SubShader {
@@ -35,16 +35,14 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 
-			/*
-			if (_Radius > distance(_Point, worldPos))
-			{                                      
+			if (_Radius > distance(_Point.rgb, IN.worldPos))
+			{
 				o.Albedo = float4(0.0f, 0.0f, 1.0f, 1.0f);
 			}
 			else
 			{
 				o.Albedo = c.rgb;
 			}
-			*/
 
 			// Metallic and smoothness come from slider variables
 			o.Metallic = _Metallic;

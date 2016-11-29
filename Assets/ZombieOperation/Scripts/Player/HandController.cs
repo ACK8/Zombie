@@ -85,7 +85,7 @@ public class HandController : MonoBehaviour
             case HandType.OperatingDevice:
 
                 //命令を決定
-                if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+                if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
                 {
                     operatingComponent.Decision();
                 }
