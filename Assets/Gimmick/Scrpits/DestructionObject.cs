@@ -13,14 +13,15 @@ public class DestructionObject : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
     public void EnduranceVaule()
     {
         if (Hp != 0)
         {
-            Hp -= 10;
+            Hp -= decrease;
         }else if(Hp<=0)
         {
             Hp = 0;
