@@ -14,7 +14,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 
                 if (instance == null)
                 {
-                    Debug.Log(typeof(T) + "is nothing");
+                    Debug.Log(typeof(T) + " is nothing");
                 }
             }
 

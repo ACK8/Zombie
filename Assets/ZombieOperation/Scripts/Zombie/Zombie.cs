@@ -82,7 +82,7 @@ public class Zombie : MonoBehaviour
         destructionTarget = target;
     }
 
-    //アニメーション   
+    //アニメーション
     void Animation()
     {
         anim.Update(0);
@@ -112,7 +112,7 @@ public class Zombie : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        if (hit.tag == "Obstacle" && hit.gameObject == destructionTarget)
+        if (hit.tag == "DestructionObject" && hit.gameObject == destructionTarget)
         {
             hit.gameObject.GetComponent<DestructionObject>().EnduranceValue();
         }

@@ -5,6 +5,10 @@ using System.Collections;
 public class Menu : SingletonMonoBehaviour<Menu>
 {
     [SerializeField]
+    private GameObject[] nemuPanel;
+    [SerializeField]
+    private float offset = 2.0f;
+    [SerializeField]
     private string titleSceneName = null;
 
     private GameObject vrCamEye;
@@ -12,15 +16,15 @@ public class Menu : SingletonMonoBehaviour<Menu>
     void Start()
     {
         vrCamEye = GameObject.Find("Camera (eye)");
-        gameObject.SetActive(false);
-        
+
+        MenuSetActive(false);
     }
 
     void Update()
     {
         if (!vrCamEye)
         {
-            Debug.LogError("vrCamEyeがありません");
+            Debug.LogError("vrCamEyeが見つかりません");
         }
     }
 
@@ -32,15 +36,18 @@ public class Menu : SingletonMonoBehaviour<Menu>
             d.y = 0.0f;
             d.Normalize();
 
-            gameObject.SetActive(true);
+            MenuSetActive(true);
 
-            transform.position = vrCamEye.transform.position + d * 1.5f;
+            transform.position = vrCamEye.transform.position + d * offset;
             transform.rotation = vrCamEye.transform.rotation;
             transform.LookAt(vrCamEye.transform);
+
+            Pauser.Pause();
         }
         else
         {
-            gameObject.SetActive(false);
+            MenuSetActive(false);
+            Pauser.Resume();
         }
     }
 
@@ -64,12 +71,20 @@ public class Menu : SingletonMonoBehaviour<Menu>
     void Restart()
     {
         print("Restart");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void BackToTitle()
     {
         print("BackToTitle");
-        //SceneManager.LoadScene(titleSceneName);
+        SceneManager.LoadScene(titleSceneName);
+    }
+
+    void MenuSetActive(bool f)
+    {
+        foreach (GameObject nemu in nemuPanel)
+        {
+            nemu.SetActive(f);
+        }
     }
 }
