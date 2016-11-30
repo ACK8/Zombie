@@ -15,7 +15,7 @@ public class Circle : MonoBehaviour
     {
         for (int i = 0; i < materials.Length; i++)
         {
-            materials[i].SetFloat("_Radius", 0.5f);
+            //materials[i].SetFloat("_Radius", 0.1f);
             materials[i].SetVector("_Point", point);
         }
     }

@@ -1,5 +1,7 @@
-﻿Shader "Custom/Circle" {
-	Properties {
+﻿Shader "Custom/Circle" 
+{
+	Properties 
+	{
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
@@ -7,7 +9,8 @@
 		_Radius ("Radius", Float) = 1.0
 		_Point ("Point", Vector) = (0.0, 0.0, 0.0, 0.0)
 	}
-	SubShader {
+	SubShader 
+	{
 		Tags { "RenderType"="Opaque" }
 		LOD 200
 		
@@ -20,7 +23,8 @@
 
 		sampler2D _MainTex;
 
-		struct Input {
+		struct Input 
+		{
 			float2 uv_MainTex;
 			float3 worldPos;
 		};
@@ -31,17 +35,20 @@
 		half _Metallic;
 		fixed4 _Color;
 
-		void surf (Input IN, inout SurfaceOutputStandard o) {
+		void surf (Input IN, inout SurfaceOutputStandard o) 
+		{
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 
-			if (_Radius > distance(_Point.rgb, IN.worldPos))
+			float d = distance(_Point.xyz, IN.worldPos);
+
+			if (_Radius < d)
 			{
-				o.Albedo = float4(0.0f, 0.0f, 1.0f, 1.0f);
+				o.Albedo = c.rgb;
 			}
 			else
 			{
-				o.Albedo = c.rgb;
+				o.Albedo = float4(0.0f, 0.0f, 0.5f, 1.0f);
 			}
 
 			// Metallic and smoothness come from slider variables
