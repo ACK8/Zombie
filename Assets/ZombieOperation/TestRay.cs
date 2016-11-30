@@ -3,27 +3,29 @@ using System.Collections;
 
 public class TestRay : MonoBehaviour
 {
-
-    // Use this for initialization
+    bool a;
     void Start()
     {
 
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 200))
             {
-                Transform objectHit = hit.transform;
-
-                // Do something with the object that was hit by the raycast.
+                Menu.Instance.SelectMenu(hit.collider.name);
             }
+        }
+
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            a = !a;
+            Menu.Instance.IsDisplayed(a);
         }
     }
 }
