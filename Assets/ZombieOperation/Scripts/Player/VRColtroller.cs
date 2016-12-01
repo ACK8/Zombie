@@ -35,6 +35,8 @@ public class VRColtroller : MonoBehaviour
         //決定
         if (Physics.Raycast(ray, out hit, 100))
         {
+            Menu.Instance.PointMenu(hit.collider.name);
+
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
                 Menu.Instance.SelectMenu(hit.collider.name);
