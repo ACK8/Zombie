@@ -16,6 +16,7 @@ TagManager:
   - Map
   - Object
   - DestructionObject
+  - Syringe
   layers:
   - Default
   - TransparentFX

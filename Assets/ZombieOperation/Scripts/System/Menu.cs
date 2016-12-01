@@ -26,7 +26,7 @@ public class Menu : SingletonMonoBehaviour<Menu>
     {
         if (!vrCamEye)
         {
-            Debug.LogError("vrCamEyeが見つかりません");
+            Debug.LogError("Camera (eye)が見つかりません");
         }
     }
 

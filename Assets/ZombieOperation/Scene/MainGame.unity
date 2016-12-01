@@ -404,6 +404,7 @@ GameObject:
   - 114: {fileID: 260566563}
   - 114: {fileID: 260566562}
   - 114: {fileID: 260566561}
+  - 114: {fileID: 260566568}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -577,6 +578,18 @@ Transform:
   - {fileID: 1552696374}
   m_Father: {fileID: 436902613}
   m_RootOrder: 1
+--- !u!114 &260566568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260566560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d6e0e5ce36691488e150a24015bc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syringe: {fileID: 263324707}
 --- !u!1 &263324707
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +603,7 @@ GameObject:
   - 136: {fileID: 263324708}
   m_Layer: 0
   m_Name: Syringe
-  m_TagString: Untagged
+  m_TagString: Syringe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
