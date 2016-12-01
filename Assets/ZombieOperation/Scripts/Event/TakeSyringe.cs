@@ -21,9 +21,9 @@ public class TakeSyringe : MonoBehaviour
         device = SteamVR_Controller.Input((int)trackedComponent.index);
     }
 
-    void OnCollisionEnter(Collision hit)
+    void OnTriggerEnter(Collider hit)
     {
-        if (hit.collider.tag == "Syringe")
+        if (hit.tag == "Syringe")
         {
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
