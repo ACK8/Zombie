@@ -21,7 +21,7 @@ public class HandController : MonoBehaviour
     private Syringe syringeComponent;
     private Operating operatingComponent;
 
-    void Start ()
+    void Start()
     {
         trackedComponent = GetComponent<SteamVR_TrackedObject>();
 
@@ -56,6 +56,7 @@ public class HandController : MonoBehaviour
 
                 break;
         }
+        SyringeEnabled(false);
     }
 
     void Update()
@@ -96,7 +97,7 @@ public class HandController : MonoBehaviour
         //注射器と操作器の入れ替え
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            if(handType == HandType.Syringe)
+            if (handType == HandType.Syringe)
             {
                 handType = HandType.OperatingDevice;
                 syringeObject.SetActive(false);
@@ -104,7 +105,7 @@ public class HandController : MonoBehaviour
                 operatingObject.SetActive(true);
                 operatingComponent.enabled = true;
             }
-            else if(handType == HandType.OperatingDevice)
+            else if (handType == HandType.OperatingDevice)
             {
                 handType = HandType.Syringe;
                 operatingObject.SetActive(false);
@@ -113,5 +114,11 @@ public class HandController : MonoBehaviour
                 syringeComponent.enabled = true;
             }
         }
+    }
+
+    public void SyringeEnabled(bool f)
+    {
+        syringeObject.SetActive(f);
+        syringeComponent.enabled = f;
     }
 }

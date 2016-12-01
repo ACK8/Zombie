@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.Events;
 
 public class TakeSyringe : MonoBehaviour
 {
     [SerializeField]
     private GameObject syringe;
+    [SerializeField]
+    private UnityEvent OnTouch;
 
     private SteamVR_TrackedObject trackedComponent;
     private SteamVR_Controller.Device device;
 
     void Start()
     {
-        trackedComponent = GetComponent<SteamVR_TrackedObject>();
+        trackedComponent = gameObject.transform.parent.GetComponent<SteamVR_TrackedObject>();
     }
 
     void Update()
@@ -25,8 +27,9 @@ public class TakeSyringe : MonoBehaviour
         {
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
             {
-                syringe.SetActive(true);
+                OnTouch.Invoke();
                 Destroy(hit.gameObject);
+                Destroy(GetComponent<CapsuleCollider>());
                 Destroy(this);
             }
         }

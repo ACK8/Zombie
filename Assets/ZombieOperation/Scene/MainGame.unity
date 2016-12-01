@@ -125,7 +125,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-17808
+  m_Name: pb_Mesh13088
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -404,7 +404,6 @@ GameObject:
   - 114: {fileID: 260566563}
   - 114: {fileID: 260566562}
   - 114: {fileID: 260566561}
-  - 114: {fileID: 260566568}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -578,18 +577,6 @@ Transform:
   - {fileID: 1552696374}
   m_Father: {fileID: 436902613}
   m_RootOrder: 1
---- !u!114 &260566568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 260566560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d6e0e5ce36691488e150a24015bc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syringe: {fileID: 263324707}
 --- !u!1 &263324707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1200,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-17806
+  m_Name: pb_Mesh12818
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2405,6 +2392,8 @@ GameObject:
   - 4: {fileID: 1552696374}
   - 120: {fileID: 1552696376}
   - 114: {fileID: 1552696375}
+  - 114: {fileID: 1552696378}
+  - 136: {fileID: 1552696377}
   m_Layer: 0
   m_Name: VRController
   m_TagString: Untagged
@@ -2480,6 +2469,47 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4278190335
   m_UseWorldSpace: 1
+--- !u!136 &1552696377
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552696373}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.03
+  m_Height: 0.2
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1552696378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552696373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d6e0e5ce36691488e150a24015bc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syringe: {fileID: 263324707}
+  OnTouch:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1874251579}
+        m_MethodName: SyringeEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1564279769
 GameObject:
   m_ObjectHideFlags: 0
