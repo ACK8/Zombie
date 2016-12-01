@@ -12,6 +12,7 @@ public class Menu : SingletonMonoBehaviour<Menu>
     private string titleSceneName = null;
 
     private GameObject vrCamEye;
+    private bool isDisplayed = false;
 
     void Start()
     {
@@ -28,9 +29,11 @@ public class Menu : SingletonMonoBehaviour<Menu>
         }
     }
 
-    public void IsDisplayed(bool f)
+    //メニュー表示の切り替え
+    public void SwitchDisplay()
     {
-        if (f)
+        isDisplayed = !isDisplayed;
+        if (isDisplayed)
         {
             Vector3 d = vrCamEye.transform.forward;
             d.y = 0.0f;
@@ -51,20 +54,31 @@ public class Menu : SingletonMonoBehaviour<Menu>
         }
     }
 
+    //項目の選択
     public void SelectMenu(string name)
     {
         switch (name)
         {
             case "Restart":
                 Restart();
+                SwitchDisplay();
                 break;
 
             case "BackToTitle":
                 BackToTitle();
+                SwitchDisplay();
                 break;
 
             default:
                 break;
+        }
+    }
+
+    void MenuSetActive(bool f)
+    {
+        foreach (GameObject nemu in nemuPanel)
+        {
+            nemu.SetActive(f);
         }
     }
 
@@ -78,13 +92,5 @@ public class Menu : SingletonMonoBehaviour<Menu>
     {
         print("BackToTitle");
         SceneManager.LoadScene(titleSceneName);
-    }
-
-    void MenuSetActive(bool f)
-    {
-        foreach (GameObject nemu in nemuPanel)
-        {
-            nemu.SetActive(f);
-        }
     }
 }
