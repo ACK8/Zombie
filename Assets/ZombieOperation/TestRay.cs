@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TestRay : MonoBehaviour
 {
-    bool a;
     void Start()
     {
 
@@ -24,8 +23,7 @@ public class TestRay : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.A))
         {
-            a = !a;
-            Menu.Instance.IsDisplayed(a);
+            Menu.Instance.SwitchDisplay();
         }
     }
 }

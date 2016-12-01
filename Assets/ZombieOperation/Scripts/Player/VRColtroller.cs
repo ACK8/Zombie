@@ -25,12 +25,14 @@ public class VRColtroller : MonoBehaviour
         line.SetPosition(0, ray.origin);
         line.SetPosition(1, ray.GetPoint(100));
 
+        //メニューの表示
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
             isMenuDisplayed = !isMenuDisplayed;
             Menu.Instance.SwitchDisplay();
         }
 
+        //決定
         if (Physics.Raycast(ray, out hit, 100))
         {
             if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
