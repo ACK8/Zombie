@@ -11,8 +11,7 @@ public class TakeSyringe : MonoBehaviour
 
     void Start()
     {
-        trackedComponent = gameObject.transform.parent.GetComponent<SteamVR_TrackedObject>();
-        syringe.SetActive(false);
+        trackedComponent = GetComponent<SteamVR_TrackedObject>();
     }
 
     void Update()
