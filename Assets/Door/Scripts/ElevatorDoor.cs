@@ -41,7 +41,7 @@ public class ElevatorDoor : MonoBehaviour
                 OpenRightDoor();
             else
                 OpenLeftDoor();
-        }   
+        }
     }
 
 
@@ -78,7 +78,7 @@ public class ElevatorDoor : MonoBehaviour
             //90度回転しているときX座標を移動
             targetPos += new Vector3(-movingSpeed * Time.deltaTime, 0f);
             targetPos.x = Mathf.Clamp(targetPos.x, initalPos.x, initalPos.x + moveingDistance);
-            
+
             if (transform.position.x == targetPos.x)
             {
                 isCloseing = false;
@@ -178,5 +178,10 @@ public class ElevatorDoor : MonoBehaviour
                 isOpen = true;
             }
         }
+    }
+
+    public bool isClose
+    {
+        get { return isCloseing; }
     }
 }
