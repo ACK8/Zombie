@@ -54,6 +54,7 @@ public class Operating : MonoBehaviour
         //ゾンビのGameObjectを取得
         if (hit.transform.tag == "Zombie")
         {
+            //ゾンビ化状態を取得
             if(hit.transform.gameObject.GetComponent<Zombie>().isZombie)
             {
                 selectedZombie = hit.transform.gameObject;
