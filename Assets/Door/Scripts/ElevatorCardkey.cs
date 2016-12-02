@@ -10,6 +10,7 @@ public class ElevatorCardkey : MonoBehaviour
 
     private float timeCount;
     private bool isTouched = false;
+    private bool _isAuthenticated = false;
 
     void Start()
     {
@@ -42,9 +43,15 @@ public class ElevatorCardkey : MonoBehaviour
                 for (int i = 0; i < doorScript.Length; i++)
                 {
                     doorScript[i].MoveDoor();
+                    _isAuthenticated = true;
                 }
             }
         }
+    }
+
+    public bool isAuthenticated
+    {
+        get { return _isAuthenticated; }
     }
 }
 
