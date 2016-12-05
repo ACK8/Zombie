@@ -162,9 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef0d71f2bb20504db895ed88c78fc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movePointObject: {fileID: 0}
   rayPointObject: {fileID: 1000013134210112}
+  circlePoint: {fileID: 0}
   selectionTarget: {fileID: 0}
-  operatingType: 0
+  playerTransform: {fileID: 0}
 --- !u!114 &114000012358003308
 MonoBehaviour:
   m_ObjectHideFlags: 1

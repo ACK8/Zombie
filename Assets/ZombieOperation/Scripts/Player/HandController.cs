@@ -5,8 +5,7 @@ using System.Collections;
 public enum HandType
 {
     VRController,
-    Syringe,
-    OperatingDevice,
+    ZombieOperating,
 }
 
 //手関係の処理をコントロールするクラス
@@ -14,12 +13,10 @@ public class HandController : MonoBehaviour
 {
     public HandType handType;
     public GameObject vrControllerObject;
-    public GameObject syringeObject;
-    public GameObject operatingObject;
+    public GameObject zombieOperatingObject;
 
     private SteamVR_TrackedObject trackedComponent;
-    private Syringe syringeComponent;
-    private Operating operatingComponent;
+    private ZombieOperating zombieOperatingComponent;
 
     void Start()
     {
@@ -27,15 +24,10 @@ public class HandController : MonoBehaviour
 
         vrControllerObject.SetActive(false);
 
-        //注射器を一旦停止
-        syringeObject.SetActive(false);
-        syringeComponent = syringeObject.GetComponent<Syringe>();
-        syringeComponent.enabled = false;
+        zombieOperatingObject.SetActive(false);
+        zombieOperatingComponent = zombieOperatingObject.GetComponent<ZombieOperating>();
+        zombieOperatingComponent.enabled = false;
 
-        //操作器を一旦停止
-        operatingObject.SetActive(false);
-        operatingComponent = operatingObject.GetComponent<Operating>();
-        operatingComponent.enabled = false;
 
         switch (handType)
         {
@@ -44,19 +36,13 @@ public class HandController : MonoBehaviour
 
                 break;
 
-            case HandType.Syringe:
-                syringeObject.SetActive(true);
-                syringeComponent.enabled = true;
-
-                break;
-
-            case HandType.OperatingDevice:
-                operatingObject.SetActive(true);
-                operatingComponent.enabled = true;
+            case HandType.ZombieOperating:
+                zombieOperatingObject.SetActive(true);
+                zombieOperatingComponent.enabled = true;
 
                 break;
         }
-        SyringeEnabled(false);
+        //SyringeEnabled(false);
     }
 
     void Update()
@@ -69,56 +55,53 @@ public class HandController : MonoBehaviour
             case HandType.VRController:
                 break;
 
-            case HandType.Syringe:
-
-                //注射を打つ
-                if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+            case HandType.ZombieOperating:
+                switch (zombieOperatingComponent.operatingType)
                 {
-                    syringeComponent.OnInjection();
+                    case ZombieOperatingType.Operating:
+                        //命令を決定
+                        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+                        {
+                            zombieOperatingComponent.OperatingEvent();
+                        }
+                        break;
+
+                    case ZombieOperatingType.Syringe:
+                        //注射を打つ
+                        if (device.GetPress(SteamVR_Controller.ButtonMask.Trigger))
+                        {
+                            zombieOperatingComponent.SyringeEvent(true);
+                        }
+                        else
+                        {
+                            zombieOperatingComponent.SyringeEvent(false);
+                        }
+                        break;
                 }
-                else
-                {
-                    syringeComponent.OffInjection();
-                }
-
-                break;
-
-            case HandType.OperatingDevice:
-
-                //命令を決定
-                if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
-                {
-                    operatingComponent.Decision();
-                }
-
                 break;
         }
 
         //注射器と操作器の入れ替え
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
-            if (handType == HandType.Syringe)
+            switch (zombieOperatingComponent.operatingType)
             {
-                handType = HandType.OperatingDevice;
-                syringeObject.SetActive(false);
-                syringeComponent.enabled = false;
-                operatingObject.SetActive(true);
-                operatingComponent.enabled = true;
-            }
-            else if (handType == HandType.OperatingDevice)
-            {
-                handType = HandType.Syringe;
-                operatingObject.SetActive(false);
-                operatingComponent.enabled = false;
-                syringeObject.SetActive(true);
-                syringeComponent.enabled = true;
+                case ZombieOperatingType.Operating:
+                    zombieOperatingComponent.ChangeMightiness(ZombieOperatingType.Syringe);
+                    break;
+
+                case ZombieOperatingType.Syringe:
+                    zombieOperatingComponent.ChangeMightiness(ZombieOperatingType.Operating);
+                    break;
             }
         }
     }
 
+    /*
     public void SyringeEnabled(bool f)
     {
         syringeObject.SetActive(f);
         syringeComponent.enabled = f;
     }
+    */
 }

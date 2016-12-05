@@ -20,8 +20,6 @@ public class Elevator : MonoBehaviour
         {
             isCloseing = true;
         }
-
-        print(isCloseing);
     }
 
     public bool isElevatorCloseing
