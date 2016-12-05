@@ -42,7 +42,7 @@
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				float3 norm = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 				float3 offset = TransformViewToProjection(norm);
-				o.vertex.xyz += offset * _LineSize;
+				o.vertex.xyz += offset * o.vertex.z * _LineSize;
 
 				return o;
 			}
