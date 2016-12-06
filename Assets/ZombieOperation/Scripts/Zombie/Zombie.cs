@@ -112,6 +112,7 @@ public class Zombie : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
+        //障害物破壊
         if (hit.tag == "DestructionObject" && hit.gameObject == destructionTarget)
         {
             hit.gameObject.GetComponent<DestructionObject>().EnduranceValue();
@@ -120,12 +121,12 @@ public class Zombie : MonoBehaviour
 
     void OnTriggerStay(Collider hit)
     {
+        //注射
         if (hit.tag == "Injection" && !_isZombie)
         {
             injectionVolume += Time.deltaTime;
         }
     }
-
     
     //NavMeshで移動しているか(誘導用)
     public bool isMove

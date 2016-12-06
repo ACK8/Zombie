@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0b8a8dcf5a9b9e441a6fbe2f4c829d2b
-timeCreated: 1480649448
+guid: 26dceba3b82be4840b7e39c0df93e5b6
+timeCreated: 1480986584
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -42,21 +42,21 @@ ModelImporter:
     100068: foot.R
     100070: forearm.L
     100072: forearm.R
-    100074: hand.L
-    100076: hand.R
-    100078: head
-    100080: head_end
-    100082: heel.02.L
-    100084: heel.02.L_end
-    100086: heel.02.R
-    100088: heel.02.R_end
-    100090: heel.L
-    100092: heel.R
-    100094: hips
-    100096: Human
-    100098: metarig
-    100100: neck
-    100102: //RootNode
+    100074: //RootNode
+    100076: hand.L
+    100078: hand.R
+    100080: head
+    100082: head_end
+    100084: heel.02.L
+    100086: heel.02.L_end
+    100088: heel.02.R
+    100090: heel.02.R_end
+    100092: heel.L
+    100094: heel.R
+    100096: hips
+    100098: Human
+    100100: metarig
+    100102: neck
     100104: palm.01.L
     100106: palm.01.R
     100108: palm.02.L
@@ -123,21 +123,21 @@ ModelImporter:
     400068: foot.R
     400070: forearm.L
     400072: forearm.R
-    400074: hand.L
-    400076: hand.R
-    400078: head
-    400080: head_end
-    400082: heel.02.L
-    400084: heel.02.L_end
-    400086: heel.02.R
-    400088: heel.02.R_end
-    400090: heel.L
-    400092: heel.R
-    400094: hips
-    400096: Human
-    400098: metarig
-    400100: neck
-    400102: //RootNode
+    400074: //RootNode
+    400076: hand.L
+    400078: hand.R
+    400080: head
+    400082: head_end
+    400084: heel.02.L
+    400086: heel.02.L_end
+    400088: heel.02.R
+    400090: heel.02.R_end
+    400092: heel.L
+    400094: heel.R
+    400096: hips
+    400098: Human
+    400100: metarig
+    400102: neck
     400104: palm.01.L
     400106: palm.01.R
     400108: palm.02.L
