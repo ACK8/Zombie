@@ -28,7 +28,6 @@ public class HandController : MonoBehaviour
         zombieOperatingComponent = zombieOperatingObject.GetComponent<ZombieOperating>();
         zombieOperatingComponent.enabled = false;
 
-
         switch (handType)
         {
             case HandType.VRController:
