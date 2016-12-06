@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b2721aa29577c114e822aba60e32b05b
-timeCreated: 1480985515
+guid: 9f929f273581b9b4ea75a7b645cbe7e4
+timeCreated: 1480985643
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: ZombieOperation
+    4300000: Syringe
   materials:
     importMaterials: 1
     materialName: 0
