@@ -18,6 +18,7 @@ public class Zombie : MonoBehaviour
     private float navSpeed = 0f;
     private bool _isMove = false;
     private bool _isZombie = false;
+    private bool isChange = false;
 
     void Start()
     {
@@ -37,6 +38,8 @@ public class Zombie : MonoBehaviour
         {
             //注射処理
             Injection();
+
+            anim.Play("GetUp", -1, 0.0f);
         }
     }
 
@@ -85,12 +88,19 @@ public class Zombie : MonoBehaviour
     //アニメーション
     void Animation()
     {
+        //起き上がる
+        if (!isChange)
+        {
+            isChange = true;
+            anim.SetTrigger("GetUp");
+        }
+
         anim.Update(0);
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         if (stateInfo.IsName("Base Layer.Attack"))
         {
-            if (attackAnimRate <= stateInfo.normalizedTime && stateInfo.normalizedTime < (attackAnimRate + 0.01))
+            if (attackAnimRate <= stateInfo.normalizedTime && stateInfo.normalizedTime < (attackAnimRate + 0.02))
             {
                 capsuleCol.enabled = true;
             }
@@ -127,7 +137,19 @@ public class Zombie : MonoBehaviour
             injectionVolume += Time.deltaTime;
         }
     }
-    
+
+    //ボーンについているスクリプトから呼ばれる
+    public void HitCollider(Collision hit)
+    {
+        print(hit.collider.name);
+    }
+
+    //ボーンについているスクリプトから呼ばれる
+    public void HitTrigger(Collider hit)
+    {
+
+    }
+
     //NavMeshで移動しているか(誘導用)
     public bool isMove
     {

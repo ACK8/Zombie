@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 26dceba3b82be4840b7e39c0df93e5b6
-timeCreated: 1480986584
+guid: 44af3e490e9008341bad078a643f0f3e
+timeCreated: 1480990180
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -182,7 +182,17 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'metarig|metarigAction' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'palm.01.L' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'palm.02.L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.03.L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.04.L'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.01.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.02.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.03.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'palm.04.R'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -191,7 +201,197 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: metarig|metarigAction
+      takeName: metarig|metarigAction
+      firstFrame: 0
+      lastFrame: 129
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Human
+        weight: 0
+      - path: metarig
+        weight: 1
+      - path: metarig/hips
+        weight: 1
+      - path: metarig/hips/spine
+        weight: 1
+      - path: metarig/hips/spine/chest
+        weight: 1
+      - path: metarig/hips/spine/chest/neck
+        weight: 1
+      - path: metarig/hips/spine/chest/neck/head
+        weight: 1
+      - path: metarig/hips/spine/chest/neck/head/head_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/f_index.01.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/f_index.01.L/f_index.02.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/f_index.01.L/f_index.02.L/f_index.03.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/f_index.01.L/f_index.02.L/f_index.03.L/f_index.03.L_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/thumb.01.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L/thumb.03.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.01.L/thumb.01.L/thumb.02.L/thumb.03.L/thumb.03.L_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L/f_middle.03.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.02.L/f_middle.01.L/f_middle.02.L/f_middle.03.L/f_middle.03.L_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.03.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.03.L/f_ring.01.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.03.L/f_ring.01.L/f_ring.02.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.03.L/f_ring.01.L/f_ring.02.L/f_ring.03.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.03.L/f_ring.01.L/f_ring.02.L/f_ring.03.L/f_ring.03.L_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.04.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.04.L/f_pinky.01.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.04.L/f_pinky.01.L/f_pinky.02.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.04.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/hand.L/palm.04.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L/f_pinky.03.L_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/f_index.01.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/f_index.01.R/f_index.02.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/f_index.01.R/f_index.02.R/f_index.03.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/f_index.01.R/f_index.02.R/f_index.03.R/f_index.03.R_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/thumb.01.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R/thumb.03.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.01.R/thumb.01.R/thumb.02.R/thumb.03.R/thumb.03.R_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R/f_middle.03.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.02.R/f_middle.01.R/f_middle.02.R/f_middle.03.R/f_middle.03.R_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.03.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.03.R/f_ring.01.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.03.R/f_ring.01.R/f_ring.02.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.03.R/f_ring.01.R/f_ring.02.R/f_ring.03.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.03.R/f_ring.01.R/f_ring.02.R/f_ring.03.R/f_ring.03.R_end
+        weight: 0
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.04.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.04.R/f_pinky.01.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.04.R/f_pinky.01.R/f_pinky.02.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.04.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R
+        weight: 1
+      - path: metarig/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/palm.04.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R/f_pinky.03.R_end
+        weight: 0
+      - path: metarig/hips/thigh.L
+        weight: 1
+      - path: metarig/hips/thigh.L/shin.L
+        weight: 1
+      - path: metarig/hips/thigh.L/shin.L/foot.L
+        weight: 1
+      - path: metarig/hips/thigh.L/shin.L/foot.L/toe.L
+        weight: 1
+      - path: metarig/hips/thigh.L/shin.L/foot.L/toe.L/toe.L_end
+        weight: 0
+      - path: metarig/hips/thigh.L/shin.L/heel.L
+        weight: 0
+      - path: metarig/hips/thigh.L/shin.L/heel.L/heel.02.L
+        weight: 0
+      - path: metarig/hips/thigh.L/shin.L/heel.L/heel.02.L/heel.02.L_end
+        weight: 0
+      - path: metarig/hips/thigh.R
+        weight: 1
+      - path: metarig/hips/thigh.R/shin.R
+        weight: 1
+      - path: metarig/hips/thigh.R/shin.R/foot.R
+        weight: 1
+      - path: metarig/hips/thigh.R/shin.R/foot.R/toe.R
+        weight: 1
+      - path: metarig/hips/thigh.R/shin.R/foot.R/toe.R/toe.R_end
+        weight: 0
+      - path: metarig/hips/thigh.R/shin.R/heel.R
+        weight: 0
+      - path: metarig/hips/thigh.R/shin.R/heel.R/heel.02.R
+        weight: 0
+      - path: metarig/hips/thigh.R/shin.R/heel.R/heel.02.R/heel.02.R_end
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -627,7 +827,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Grab(Clone)
+    - name: GetUp(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -643,29 +843,29 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: hips
-      position: {x: -0, y: 0.08379913, z: 1.5331295}
+      position: {x: 0, y: 0.083798885, z: 1.5331789}
       rotation: {x: 0.77897257, y: -0, z: -0, w: 0.627058}
-      scale: {x: 1, y: 0.9999999, z: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.9999997}
       transformModified: 1
     - name: spine
-      position: {x: -0, y: 0.27007857, z: 0.000000009313226}
+      position: {x: 3.3087225e-24, y: 0.2700787, z: 0.000000052154064}
       rotation: {x: -0.05466777, y: -0, z: -0, w: 0.99850464}
-      scale: {x: 1, y: 0.9999998, z: 0.99999994}
+      scale: {x: 1, y: 1.0000005, z: 1.0000001}
       transformModified: 1
     - name: chest
-      position: {x: 1.2989321e-24, y: 0.24136277, z: -0.000000029802322}
+      position: {x: 3.3087225e-24, y: 0.24136281, z: -0.000000007450581}
       rotation: {x: -0.070250414, y: -0, z: -0, w: 0.9975294}
-      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      scale: {x: 1, y: 1.0000004, z: 1.0000004}
       transformModified: 1
     - name: neck
-      position: {x: 6.617445e-24, y: 0.53655326, z: -0.025578856}
+      position: {x: -9.926167e-24, y: 0.53655326, z: -0.025578853}
       rotation: {x: 0.08879287, y: -0.00000011873844, z: -0.000000010584971, w: 0.9960502}
-      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+      scale: {x: 1, y: 1.0000008, z: 1.0000008}
       transformModified: 1
     - name: head
-      position: {x: 2.8336725e-14, y: 0.13785696, z: -0.000000059604645}
+      position: {x: -3.800054e-15, y: 0.13785705, z: -0.000000014901161}
       rotation: {x: -0.042964164, y: -4.263256e-14, z: 0.00000001024346, w: 0.9990766}
-      scale: {x: 1, y: 0.9999999, z: 0.9999998}
+      scale: {x: 1, y: 1.0000008, z: 1.0000008}
       transformModified: 1
     - name: head_end
       position: {x: -0, y: 0.29448366, z: 0}
@@ -673,44 +873,44 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: shoulder.L
-      position: {x: -0.027781235, y: 0.3958457, z: 0.1182704}
-      rotation: {x: -0.5641137, y: 0.40756798, z: 0.39882275, w: 0.59716374}
-      scale: {x: 1.0000001, y: 1, z: 1.0000004}
+      position: {x: -0.027781235, y: 0.39584556, z: 0.11827041}
+      rotation: {x: -0.5641138, y: 0.40756774, z: 0.39882296, w: 0.5971636}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000007}
       transformModified: 1
     - name: upper_arm.L
-      position: {x: -0.011828333, y: 0.30482078, z: -0.030946625}
-      rotation: {x: 0.10276236, y: -0.728452, z: 0.14859629, w: 0.6608455}
-      scale: {x: 1.0000008, y: 1.0000005, z: 0.9999998}
+      position: {x: -0.011828352, y: 0.30482087, z: -0.030946102}
+      rotation: {x: 0.10276295, y: -0.72845197, z: 0.14859588, w: 0.66084564}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.0000002}
       transformModified: 1
     - name: forearm.L
-      position: {x: 0.000000115484, y: 0.39196494, z: 0.000000022351742}
-      rotation: {x: 0.029920962, y: -0.057363324, z: -0.012633203, w: 0.99782497}
-      scale: {x: 0.99999905, y: 0.9999999, z: 0.99999946}
+      position: {x: -0.000000048428774, y: 0.3919649, z: 0}
+      rotation: {x: 0.02992088, y: -0.057363413, z: -0.012632852, w: 0.997825}
+      scale: {x: 0.99999946, y: 0.9999991, z: 0.9999997}
       transformModified: 1
     - name: hand.L
-      position: {x: -0.000000018626451, y: 0.3016469, z: 0.000000018626451}
+      position: {x: -0.000000022351742, y: 0.30164692, z: 0.000000007450581}
       rotation: {x: 0.04643898, y: -0.69483113, z: -0.04384588, w: 0.71633136}
-      scale: {x: 1.0000002, y: 1.0000012, z: 1.0000008}
+      scale: {x: 1.0000004, y: 1.0000007, z: 0.99999994}
       transformModified: 1
     - name: palm.01.L
-      position: {x: 0.023396567, y: 0.16559255, z: 0.014420997}
+      position: {x: 0.023396527, y: 0.16559267, z: 0.014420975}
       rotation: {x: -0.040941145, y: -0.058825903, z: -0.024166942, w: 0.9971356}
-      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000005}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.99999994}
       transformModified: 1
     - name: f_index.01.L
-      position: {x: -0.000000014901161, y: 0.10396168, z: -0.00000008568168}
-      rotation: {x: 0.07676322, y: -0.0003034882, z: 0.122762695, w: 0.98946285}
-      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000008}
+      position: {x: -0.000000077765435, y: 0.10396181, z: 0.0000000037252903}
+      rotation: {x: 0.076763794, y: -0.00030342478, z: 0.12276243, w: 0.9894628}
+      scale: {x: 1.0000001, y: 0.99999934, z: 0.99999994}
       transformModified: 1
     - name: f_index.02.L
-      position: {x: 0.000000014901161, y: 0.06838841, z: -0.000000037252903}
-      rotation: {x: 0.039618615, y: 0.009514243, z: 0.0024626178, w: 0.99916655}
-      scale: {x: 1.0000005, y: 1.0000012, z: 1.0000005}
+      position: {x: -0.00000002142042, y: 0.06838835, z: -0.000000008731149}
+      rotation: {x: 0.03962197, y: 0.0095141865, z: 0.0024634625, w: 0.99916637}
+      scale: {x: 0.9999999, y: 1.0000005, z: 0.99999976}
       transformModified: 1
     - name: f_index.03.L
-      position: {x: -0, y: 0.04283756, z: 0.000000074505806}
-      rotation: {x: 0.036704674, y: 0.017032368, z: 0.0073886327, w: 0.99915373}
-      scale: {x: 1.0000004, y: 1.0000011, z: 1.0000005}
+      position: {x: 0.000000086613, y: 0.04283752, z: 0.00000006519258}
+      rotation: {x: 0.03670431, y: 0.017032182, z: 0.0073874113, w: 0.99915373}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000005}
       transformModified: 1
     - name: f_index.03.L_end
       position: {x: -0, y: 0.04997207, z: 0}
@@ -718,19 +918,19 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: thumb.01.L
-      position: {x: 0.016354784, y: -0.028698578, z: 0.022447336}
-      rotation: {x: -0.20097597, y: -0.5806325, z: -0.21628384, w: 0.75874627}
-      scale: {x: 1.0000007, y: 1.0000011, z: 1.000001}
+      position: {x: 0.0163547, y: -0.028698578, z: 0.022447415}
+      rotation: {x: -0.20097788, y: -0.58063126, z: -0.2162809, w: 0.75874746}
+      scale: {x: 1.0000005, y: 0.9999998, z: 1.0000004}
       transformModified: 1
     - name: thumb.02.L
-      position: {x: 0.000000067055225, y: 0.055779234, z: 0.000000007450581}
-      rotation: {x: 0.030657697, y: 0.11731811, z: 0.0044578896, w: 0.9926111}
-      scale: {x: 0.99999964, y: 1, z: 1.0000014}
+      position: {x: 0.000000052154064, y: 0.055779263, z: 9.313226e-10}
+      rotation: {x: 0.030661874, y: 0.11731905, z: 0.004458635, w: 0.9926108}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.99999976}
       transformModified: 1
     - name: thumb.03.L
-      position: {x: 0.000000022351742, y: 0.060193054, z: 0.000000059604645}
-      rotation: {x: 0.025870904, y: 0.0058632023, z: 0.0279521, w: 0.99925727}
-      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000011}
+      position: {x: -0.000000011175871, y: 0.060193192, z: 0.000000047730282}
+      rotation: {x: 0.025869085, y: 0.005863144, z: 0.027951961, w: 0.9992573}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000002}
       transformModified: 1
     - name: thumb.03.L_end
       position: {x: -0, y: 0.06606971, z: 0}
@@ -738,24 +938,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: palm.02.L
-      position: {x: 0.00115107, y: 0.15112261, z: 0.004966799}
+      position: {x: 0.001150988, y: 0.15112269, z: 0.0049667433}
       rotation: {x: -0.12662245, y: -0.033982363, z: 0.15963508, w: 0.9784317}
-      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000004}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000004}
       transformModified: 1
     - name: f_middle.01.L
-      position: {x: 0.000000007450581, y: 0.105691634, z: -0.000000039115548}
-      rotation: {x: 0.13295731, y: -0.023653582, z: -0.04375751, w: 0.98987275}
-      scale: {x: 0.9999994, y: 0.9999996, z: 1.0000004}
+      position: {x: -0.000000009313226, y: 0.10569155, z: 0.000000014959369}
+      rotation: {x: 0.13295676, y: -0.023653531, z: -0.04375742, w: 0.98987293}
+      scale: {x: 0.99999964, y: 0.9999993, z: 1.0000002}
       transformModified: 1
     - name: f_middle.02.L
-      position: {x: -0.000000029802322, y: 0.067351006, z: -0.00000004656613}
-      rotation: {x: 0.032029845, y: 0.02840747, z: 0.00029213078, w: 0.99908316}
-      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999996}
+      position: {x: -0, y: 0.067350976, z: -0.000000018626451}
+      rotation: {x: 0.032031484, y: 0.028407551, z: 0.00029101927, w: 0.99908304}
+      scale: {x: 1.0000002, y: 1.0000007, z: 1.0000006}
       transformModified: 1
     - name: f_middle.03.L
-      position: {x: 0.000000022351742, y: 0.06475588, z: 0.000000020954758}
+      position: {x: 0.000000014901161, y: 0.064755924, z: 0}
       rotation: {x: 0.035327625, y: 0.019649994, z: 0.001818314, w: 0.9991809}
-      scale: {x: 0.99999994, y: 1.0000005, z: 1}
+      scale: {x: 0.9999998, y: 1.000001, z: 1.0000013}
       transformModified: 1
     - name: f_middle.03.L_end
       position: {x: -0, y: 0.05763823, z: 0}
@@ -763,24 +963,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: palm.03.L
-      position: {x: -0.027318083, y: 0.14222535, z: -0.009615909}
+      position: {x: -0.027318157, y: 0.14222544, z: -0.009615932}
       rotation: {x: -0.12259203, y: 0.014008965, z: 0.22946161, w: 0.9654648}
-      scale: {x: 1.0000012, y: 1.0000011, z: 1.0000008}
+      scale: {x: 1, y: 1.0000007, z: 1.0000001}
       transformModified: 1
     - name: f_ring.01.L
-      position: {x: 0.000000018626451, y: 0.10595449, z: -0.000000015832484}
-      rotation: {x: 0.13512191, y: 0.0018992897, z: -0.115919225, w: 0.98402303}
-      scale: {x: 1.0000004, y: 1.000001, z: 1.0000004}
+      position: {x: 0.000000067055225, y: 0.10595447, z: 0.000000037252903}
+      rotation: {x: 0.13512072, y: 0.0018994769, z: -0.11591947, w: 0.98402315}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000005}
       transformModified: 1
     - name: f_ring.02.L
-      position: {x: -0.000000048428774, y: 0.054740943, z: 0.000000063795596}
-      rotation: {x: 0.03774939, y: 0.014677449, z: 0.00020321665, w: 0.9991795}
-      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+      position: {x: 0.000000033527613, y: 0.054740746, z: 0.000000022351742}
+      rotation: {x: 0.037749097, y: 0.014677331, z: 0.00020254955, w: 0.99917954}
+      scale: {x: 0.99999994, y: 0.99999964, z: 1.0000002}
       transformModified: 1
     - name: f_ring.03.L
-      position: {x: -0.00000001792796, y: 0.0610215, z: 0.000000015366822}
-      rotation: {x: 0.03852619, y: 0.03295554, z: 0.0015121965, w: 0.99871284}
-      scale: {x: 1.0000002, y: 1.0000006, z: 1.0000001}
+      position: {x: -0.0000000037252903, y: 0.06102176, z: -0.00000009685755}
+      rotation: {x: 0.038525876, y: 0.032955404, z: 0.0015117151, w: 0.9987129}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000008}
       transformModified: 1
     - name: f_ring.03.L_end
       position: {x: -0, y: 0.050348934, z: 0}
@@ -788,24 +988,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: palm.04.L
-      position: {x: -0.06361331, y: 0.1275948, z: -0.014110211}
+      position: {x: -0.06361334, y: 0.12759474, z: -0.014110226}
       rotation: {x: -0.07444729, y: 0.03139966, z: 0.28716746, w: 0.9544666}
-      scale: {x: 1.0000012, y: 1.0000006, z: 1.0000001}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1}
       transformModified: 1
     - name: f_pinky.01.L
-      position: {x: 0.000000007450581, y: 0.10157602, z: -0.00000017369166}
-      rotation: {x: 0.0835808, y: 0.026794031, z: -0.17180136, w: 0.9812138}
-      scale: {x: 0.99999994, y: 1, z: 1.0000005}
+      position: {x: 0.000000044703484, y: 0.10157602, z: 0.000000022351742}
+      rotation: {x: 0.08358087, y: 0.026793426, z: -0.17180365, w: 0.98121345}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000006}
       transformModified: 1
     - name: f_pinky.02.L
-      position: {x: 0.000000044703484, y: 0.045240026, z: 0.000000005355105}
-      rotation: {x: 0.029261993, y: -0.0014436324, z: -0.0049350443, w: 0.99955857}
-      scale: {x: 1.0000006, y: 1.0000008, z: 1.0000001}
+      position: {x: -0.000000007450581, y: 0.045239903, z: 0.000000007450581}
+      rotation: {x: 0.029264921, y: -0.0014434208, z: -0.004933356, w: 0.9995585}
+      scale: {x: 1.0000002, y: 1.0000013, z: 1.0000013}
       transformModified: 1
     - name: f_pinky.03.L
-      position: {x: 0.00000005401671, y: 0.052684776, z: 0.0000000041909516}
-      rotation: {x: 0.03800014, y: 0.016026977, z: 0.004578928, w: 0.9991388}
-      scale: {x: 1.0000005, y: 1.0000014, z: 0.9999998}
+      position: {x: -0.000000026077032, y: 0.052684776, z: -0.000000059604645}
+      rotation: {x: 0.037995268, y: 0.01602686, z: 0.004576972, w: 0.99913895}
+      scale: {x: 1.0000001, y: 1.0000017, z: 1.0000011}
       transformModified: 1
     - name: f_pinky.03.L_end
       position: {x: -0, y: 0.042924028, z: 0}
@@ -813,44 +1013,44 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: shoulder.R
-      position: {x: 0.027781235, y: 0.3958457, z: 0.1182704}
-      rotation: {x: -0.5641137, y: -0.40756798, z: -0.39882275, w: 0.59716374}
-      scale: {x: 1.0000001, y: 1, z: 1.0000004}
+      position: {x: 0.027781235, y: 0.39584556, z: 0.11827041}
+      rotation: {x: -0.56411374, y: -0.40756786, z: -0.39882305, w: 0.5971636}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
       transformModified: 1
     - name: upper_arm.R
-      position: {x: 0.011828333, y: 0.30482078, z: -0.030946625}
-      rotation: {x: -0.10276243, y: -0.72845197, z: 0.14859618, w: -0.6608455}
-      scale: {x: 1.0000013, y: 1.0000008, z: 0.9999999}
+      position: {x: 0.0118283145, y: 0.30482087, z: -0.030946132}
+      rotation: {x: -0.10276274, y: -0.72845197, z: 0.14859587, w: -0.6608455}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.0000002}
       transformModified: 1
     - name: forearm.R
-      position: {x: 0.00000005727634, y: 0.39196494, z: 0.000000007450581}
-      rotation: {x: 0.029921846, y: 0.05736333, z: 0.01263249, w: 0.9978249}
-      scale: {x: 0.9999994, y: 1.0000002, z: 1}
+      position: {x: -0.000000029802322, y: 0.39196497, z: 0.000000014901161}
+      rotation: {x: 0.029920846, y: 0.05736333, z: 0.012632839, w: 0.997825}
+      scale: {x: 0.99999934, y: 0.99999946, z: 0.9999999}
       transformModified: 1
     - name: hand.R
-      position: {x: -0.000000035390258, y: 0.30164683, z: 0}
+      position: {x: -0, y: 0.30164686, z: -0.000000011175871}
       rotation: {x: -0.04643898, y: -0.69483113, z: -0.04384588, w: -0.71633136}
-      scale: {x: 1.0000002, y: 1.0000013, z: 1.0000005}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000006}
       transformModified: 1
     - name: palm.01.R
-      position: {x: -0.023396604, y: 0.16559231, z: 0.014421001}
+      position: {x: -0.023396611, y: 0.16559249, z: 0.014420971}
       rotation: {x: -0.040941145, y: 0.058825903, z: 0.024166942, w: 0.9971356}
-      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000002}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000005}
       transformModified: 1
     - name: f_index.01.R
-      position: {x: -0.000000029802322, y: 0.1039619, z: 0.000000074505806}
-      rotation: {x: 0.07676219, y: 0.00030361113, z: -0.122762196, w: 0.9894629}
-      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000007}
+      position: {x: 0.000000052154064, y: 0.10396171, z: 0.000000016763806}
+      rotation: {x: 0.07676342, y: 0.00030347327, z: -0.12276249, w: 0.98946285}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000011}
       transformModified: 1
     - name: f_index.02.R
-      position: {x: 0.000000007450581, y: 0.068388335, z: -0.000000022351742}
-      rotation: {x: 0.039620325, y: -0.009514229, z: -0.0024640681, w: 0.9991665}
-      scale: {x: 1.0000002, y: 1.0000011, z: 1.0000004}
+      position: {x: -0.000000055879354, y: 0.068388306, z: 0.00000008568168}
+      rotation: {x: 0.03962193, y: -0.00951431, z: -0.0024623156, w: 0.99916637}
+      scale: {x: 1.0000001, y: 1, z: 1.0000004}
       transformModified: 1
     - name: f_index.03.R
-      position: {x: 0.000000037252903, y: 0.042837586, z: 0.0000000037252903}
-      rotation: {x: 0.03670338, y: -0.017032363, z: -0.007390622, w: 0.9991538}
-      scale: {x: 1.0000006, y: 1.0000018, z: 1.0000007}
+      position: {x: -0.000000011175871, y: 0.04283756, z: -0.000000022351742}
+      rotation: {x: 0.03670312, y: -0.017031921, z: -0.0073909056, w: 0.9991538}
+      scale: {x: 1, y: 1.0000008, z: 1.0000005}
       transformModified: 1
     - name: f_index.03.R_end
       position: {x: -0, y: 0.04997207, z: 0}
@@ -858,19 +1058,19 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: thumb.01.R
-      position: {x: -0.016354814, y: -0.028698627, z: 0.022447437}
-      rotation: {x: -0.20097606, y: 0.58063227, z: 0.21628346, w: 0.75874645}
-      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000002}
+      position: {x: -0.016354727, y: -0.028698694, z: 0.022447407}
+      rotation: {x: -0.20097817, y: 0.5806325, z: 0.21628363, w: 0.7587457}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000007}
       transformModified: 1
     - name: thumb.02.R
-      position: {x: -0.000000029802322, y: 0.05577939, z: -0.00000008195639}
-      rotation: {x: 0.030660845, y: -0.11731857, z: -0.004463508, w: 0.9926109}
-      scale: {x: 0.99999934, y: 0.9999985, z: 1.0000006}
+      position: {x: 0.000000007450581, y: 0.055779286, z: 0.000000048428774}
+      rotation: {x: 0.03065852, y: -0.11731878, z: -0.0044599613, w: 0.992611}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1.0000002}
       transformModified: 1
     - name: thumb.03.R
-      position: {x: -0.000000067055225, y: 0.060192946, z: -0.000000044703484}
-      rotation: {x: 0.025869563, y: -0.005863279, z: -0.027954537, w: 0.9992572}
-      scale: {x: 1.0000001, y: 0.99999976, z: 0.99999964}
+      position: {x: -0.000000063329935, y: 0.06019313, z: 0.000000074505806}
+      rotation: {x: 0.025868325, y: -0.0058632544, z: -0.027951222, w: 0.9992574}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1}
       transformModified: 1
     - name: thumb.03.R_end
       position: {x: -0, y: 0.06606971, z: 0}
@@ -878,24 +1078,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: palm.02.R
-      position: {x: -0.0011511073, y: 0.15112236, z: 0.004966745}
+      position: {x: -0.0011510663, y: 0.15112251, z: 0.0049667507}
       rotation: {x: -0.12662245, y: 0.033982363, z: -0.15963508, w: 0.9784317}
-      scale: {x: 1.0000012, y: 1.0000006, z: 1.0000006}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000006}
       transformModified: 1
     - name: f_middle.01.R
-      position: {x: -0.000000022351742, y: 0.10569151, z: -0.000000024214387}
-      rotation: {x: 0.13295643, y: 0.023653198, z: 0.043757245, w: 0.98987293}
-      scale: {x: 0.9999996, y: 0.99999905, z: 0.9999999}
+      position: {x: 0.000000037252903, y: 0.1056914, z: -0.000000029802322}
+      rotation: {x: 0.13295828, y: 0.023653775, z: 0.04375727, w: 0.9898727}
+      scale: {x: 0.99999964, y: 0.9999997, z: 1.000001}
       transformModified: 1
     - name: f_middle.02.R
-      position: {x: -0, y: 0.067350864, z: 0.000000026077032}
-      rotation: {x: 0.03203188, y: -0.028407991, z: -0.00029161677, w: 0.9990831}
-      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000004}
+      position: {x: 0.000000029802322, y: 0.06735115, z: -0.00000009685755}
+      rotation: {x: 0.032028675, y: -0.028407184, z: -0.0002888701, w: 0.9990831}
+      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000012}
       transformModified: 1
     - name: f_middle.03.R
-      position: {x: 0.000000022351742, y: 0.064755864, z: -0.00000007683411}
+      position: {x: 0.000000029802322, y: 0.06475587, z: 0.000000074505806}
       rotation: {x: -0.035327625, y: 0.019649994, z: 0.001818314, w: -0.9991809}
-      scale: {x: 1.0000005, y: 1.0000015, z: 1.0000006}
+      scale: {x: 0.9999999, y: 1.0000014, z: 1.0000014}
       transformModified: 1
     - name: f_middle.03.R_end
       position: {x: -0, y: 0.05763823, z: 0}
@@ -903,24 +1103,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: palm.03.R
-      position: {x: 0.027318038, y: 0.1422253, z: -0.009615902}
+      position: {x: 0.027318068, y: 0.14222527, z: -0.009615913}
       rotation: {x: 0.12259203, y: 0.014008965, z: 0.22946161, w: -0.9654648}
-      scale: {x: 1.0000011, y: 1.0000008, z: 1.0000006}
+      scale: {x: 1.0000001, y: 1.000001, z: 1.0000007}
       transformModified: 1
     - name: f_ring.01.R
-      position: {x: -0.000000020489097, y: 0.10595439, z: -0.000000013969839}
-      rotation: {x: 0.13512251, y: -0.0018993063, z: 0.1159182, w: 0.98402303}
-      scale: {x: 1.0000005, y: 1.0000012, z: 1.0000008}
+      position: {x: -0.000000029802322, y: 0.10595437, z: 0}
+      rotation: {x: 0.13512313, y: -0.0018988268, z: 0.11591715, w: 0.9840231}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
       transformModified: 1
     - name: f_ring.02.R
-      position: {x: 0.000000013038516, y: 0.05474098, z: -0.000000011175871}
-      rotation: {x: 0.037745584, y: -0.014677511, z: -0.00020344465, w: 0.9991796}
-      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000004}
+      position: {x: -0.000000115484, y: 0.054741062, z: -0.000000014901161}
+      rotation: {x: 0.037746053, y: -0.014677354, z: -0.00020203795, w: 0.99917954}
+      scale: {x: 0.9999996, y: 0.9999996, z: 0.99999946}
       transformModified: 1
     - name: f_ring.03.R
-      position: {x: 0.000000013038516, y: 0.061021663, z: 0.000000006519258}
-      rotation: {x: 0.03852875, y: -0.032955676, z: -0.0015095068, w: 0.99871284}
-      scale: {x: 1.0000004, y: 1.000001, z: 1.0000006}
+      position: {x: -0.00000008940697, y: 0.061021686, z: 0.000000037252903}
+      rotation: {x: 0.038530637, y: -0.03295543, z: -0.0015112394, w: 0.9987127}
+      scale: {x: 1, y: 0.99999964, z: 1}
       transformModified: 1
     - name: f_ring.03.R_end
       position: {x: -0, y: 0.050348934, z: 0}
@@ -928,24 +1128,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: palm.04.R
-      position: {x: 0.06361325, y: 0.12759446, z: -0.014110171}
+      position: {x: 0.06361327, y: 0.12759459, z: -0.01411023}
       rotation: {x: 0.07444729, y: 0.03139966, z: 0.28716746, w: -0.9544666}
-      scale: {x: 1.0000013, y: 1.0000005, z: 1.0000006}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999997}
       transformModified: 1
     - name: f_pinky.01.R
-      position: {x: 0.000000033527613, y: 0.10157615, z: 0.00000006984919}
-      rotation: {x: 0.08357958, y: -0.026793705, z: 0.17180564, w: 0.9812132}
-      scale: {x: 0.99999976, y: 1, z: 1.0000007}
+      position: {x: -0.000000059604645, y: 0.10157618, z: 0.000000014901161}
+      rotation: {x: 0.08358098, y: -0.026793312, z: 0.17180231, w: 0.98121375}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000011}
       transformModified: 1
     - name: f_pinky.02.R
-      position: {x: -0.0000000055879354, y: 0.04524011, z: 0.00000001839362}
-      rotation: {x: 0.029258203, y: 0.0014440158, z: 0.0049320767, w: 0.9995587}
-      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000001}
+      position: {x: -0.000000033527613, y: 0.04523995, z: 0.00000008940697}
+      rotation: {x: 0.029261496, y: 0.0014434359, z: 0.004933296, w: 0.9995586}
+      scale: {x: 1.0000002, y: 1.0000008, z: 1.0000011}
       transformModified: 1
     - name: f_pinky.03.R
-      position: {x: -0.000000022351742, y: 0.05268464, z: -0.000000011641532}
-      rotation: {x: 0.037997957, y: -0.016027043, z: -0.0045794323, w: 0.99913883}
-      scale: {x: 1.0000002, y: 1.000001, z: 1.0000004}
+      position: {x: 0.000000044703484, y: 0.052684743, z: 0.0000000037252903}
+      rotation: {x: 0.03799779, y: -0.01602685, z: -0.004576979, w: 0.99913883}
+      scale: {x: 1.0000002, y: 1, z: 0.9999992}
       transformModified: 1
     - name: f_pinky.03.R_end
       position: {x: -0, y: 0.042924028, z: 0}
@@ -953,24 +1153,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: thigh.L
-      position: {x: -0.14877382, y: 0.11557346, z: 0.08723121}
+      position: {x: -0.14877382, y: 0.11557355, z: 0.08723123}
       rotation: {x: 0.99911654, y: -0.022597438, z: 0.005820305, w: 0.03495422}
-      scale: {x: 1.000006, y: 1.0000027, z: 1.0000122}
+      scale: {x: 1.0000056, y: 1.0000025, z: 1.0000138}
       transformModified: 1
     - name: shin.L
-      position: {x: -0.0000000016298145, y: 0.7991452, z: -0.000000019441359}
+      position: {x: -0.000000002561137, y: 0.7991453, z: 0.000000003259629}
       rotation: {x: -0.06197984, y: -0.004224906, z: 0.021677213, w: 0.9978331}
-      scale: {x: 0.99999994, y: 0.99999934, z: 0.99999857}
+      scale: {x: 1.0000069, y: 0.9999998, z: 0.9999932}
       transformModified: 1
     - name: foot.L
-      position: {x: -0.000000018277206, y: 0.6668021, z: 0.000000029220246}
+      position: {x: 0.0000000018626451, y: 0.6668023, z: -0.000000013038516}
       rotation: {x: -0.5297345, y: 0.02652359, z: -0.03601064, w: 0.84698355}
-      scale: {x: 1.0000001, y: 0.9999989, z: 1.000001}
+      scale: {x: 0.99999934, y: 0.9999987, z: 1.0000015}
       transformModified: 1
     - name: toe.L
-      position: {x: 0.000000009996441, y: 0.2761179, z: -0.000000005951506}
+      position: {x: 0.000000037252903, y: 0.27611777, z: -0.00000010617077}
       rotation: {x: 0.000000093132236, y: 0.9719801, z: -0.23506328, w: 0.0000005420296}
-      scale: {x: 1.0000006, y: 0.9999978, z: 1.0000024}
+      scale: {x: 1.0000002, y: 0.9999993, z: 1.0000012}
       transformModified: 1
     - name: toe.L_end
       position: {x: -0, y: 0.102016345, z: 0}
@@ -978,14 +1178,14 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: heel.L
-      position: {x: -0.000000018277206, y: 0.6668021, z: 0.000000029220246}
+      position: {x: 0.0000000018626451, y: 0.6668023, z: -0.000000013038516}
       rotation: {x: 0.044592664, y: 0.98742115, z: 0.15165512, w: 0.00341323}
-      scale: {x: 1.0000008, y: 1.0000013, z: 0.9999994}
+      scale: {x: 0.99999934, y: 1.0000011, z: 0.9999993}
       transformModified: 1
     - name: heel.02.L
-      position: {x: -0.057688963, y: 0.11023969, z: 0.14691506}
+      position: {x: -0.057688978, y: 0.11023968, z: 0.14691506}
       rotation: {x: -0.092397355, y: -0.69365066, z: -0.13724738, w: -0.7010525}
-      scale: {x: 1.0000002, y: 1.0000049, z: 0.9999987}
+      scale: {x: 1.0000001, y: 1.0000088, z: 0.9999918}
       transformModified: 1
     - name: heel.02.L_end
       position: {x: -0, y: 0.121448025, z: 0}
@@ -993,24 +1193,24 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: thigh.R
-      position: {x: 0.14877382, y: 0.11557346, z: 0.08723121}
+      position: {x: 0.14877382, y: 0.11557355, z: 0.08723123}
       rotation: {x: 0.99911654, y: 0.022597438, z: -0.005820305, w: 0.03495422}
-      scale: {x: 1.000006, y: 1.0000027, z: 1.0000122}
+      scale: {x: 1.0000048, y: 1.000002, z: 1.0000137}
       transformModified: 1
     - name: shin.R
-      position: {x: 0.0000000016298145, y: 0.7991452, z: -0.000000019441359}
+      position: {x: -0.000000017695129, y: 0.7991453, z: 0.000000009313226}
       rotation: {x: -0.06197984, y: 0.004224906, z: -0.021677213, w: 0.9978331}
-      scale: {x: 0.99999994, y: 0.99999934, z: 0.99999857}
+      scale: {x: 1.000006, y: 1.0000019, z: 0.99998975}
       transformModified: 1
     - name: foot.R
-      position: {x: 0.000000018277206, y: 0.6668021, z: 0.000000029220246}
+      position: {x: -0.000000007450581, y: 0.66680217, z: 0.000000022351742}
       rotation: {x: -0.5297345, y: -0.02652359, z: 0.03601064, w: 0.84698355}
-      scale: {x: 1.0000001, y: 0.9999989, z: 1.000001}
+      scale: {x: 1, y: 0.9999985, z: 1.0000008}
       transformModified: 1
     - name: toe.R
-      position: {x: -0.000000009996441, y: 0.2761179, z: -0.000000005951506}
+      position: {x: 0.000000037252903, y: 0.2761178, z: 9.313226e-10}
       rotation: {x: -0.000000093132236, y: 0.9719801, z: -0.23506328, w: -0.0000005420296}
-      scale: {x: 1.0000006, y: 0.9999978, z: 1.0000024}
+      scale: {x: 1.0000002, y: 1.0000006, z: 0.999999}
       transformModified: 1
     - name: toe.R_end
       position: {x: -0, y: 0.102016345, z: 0}
@@ -1018,14 +1218,14 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: heel.R
-      position: {x: 0.000000018277206, y: 0.6668021, z: 0.000000029220246}
+      position: {x: -0.000000007450581, y: 0.66680217, z: 0.000000022351742}
       rotation: {x: -0.044592664, y: 0.98742115, z: 0.15165512, w: -0.00341323}
-      scale: {x: 1.0000008, y: 1.0000013, z: 0.9999994}
+      scale: {x: 1.0000005, y: 1.0000008, z: 0.9999995}
       transformModified: 1
     - name: heel.02.R
-      position: {x: 0.057688963, y: 0.11023969, z: 0.14691506}
+      position: {x: 0.057688963, y: 0.11023966, z: 0.14691499}
       rotation: {x: 0.092397355, y: -0.69365066, z: -0.13724738, w: 0.7010525}
-      scale: {x: 1.0000002, y: 1.0000049, z: 0.9999987}
+      scale: {x: 1.000001, y: 1.0000069, z: 0.99999297}
       transformModified: 1
     - name: heel.02.R_end
       position: {x: -0, y: 0.121448025, z: 0}
