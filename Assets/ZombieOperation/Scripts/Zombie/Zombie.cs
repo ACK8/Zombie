@@ -48,19 +48,25 @@ public class Zombie : MonoBehaviour
     public void Wait()
     {
         navMesh.speed = 0f;
+        anim.SetFloat("Blend", 0.0f);
+
     }
 
     //ゾンビ誘導処理
-    public void Move(Vector3 target)
+    public bool Move(Vector3 target)
     {
         navMesh.speed = navSpeed;
         navMesh.SetDestination(target);
+
+        anim.SetFloat("Blend", 1.0f);
 
         //目的地に到着
         if (Vector3.Distance(this.transform.position, target) <= 0.9f)
         {
             _isMove = false;
+            return true;
         }
+        return false;
     }
 
     //プレイヤーに追従
@@ -68,6 +74,8 @@ public class Zombie : MonoBehaviour
     {
         navMesh.speed = navSpeed;
         navMesh.SetDestination(playerPos.position);
+
+        anim.SetFloat("Blend", 1.0f);
 
         //目的地に到着
         if (Vector3.Distance(this.transform.position, playerPos.position) <= 2.0f)
@@ -79,7 +87,23 @@ public class Zombie : MonoBehaviour
     //障害物を破壊
     public void Destruction(GameObject target)
     {
-        destructionTarget = target;
+        if (target)
+        {
+            if (!_isMove)
+            {
+                destructionTarget = target;
+
+                anim.SetTrigger("Attack");
+            }
+            else
+            {
+                Move(target.transform.position);
+            }
+        }
+        else
+        {
+            Wait();
+        }
     }
 
     //アニメーション
