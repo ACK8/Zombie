@@ -19,12 +19,6 @@ public class VRColtroller : MonoBehaviour
     {
         var device = SteamVR_Controller.Input((int)trackedComponent.index);
 
-        ray.direction = this.transform.forward;
-        ray.origin = this.transform.position;
-
-        line.SetPosition(0, ray.origin);
-        line.SetPosition(1, ray.GetPoint(100));
-
         //メニューの表示
         if (device.GetPressDown(SteamVR_Controller.ButtonMask.ApplicationMenu))
         {
@@ -40,5 +34,14 @@ public class VRColtroller : MonoBehaviour
                 Menu.Instance.SelectMenu(hit.collider.name);
             }
         }
+
+        //メニュー表示中とレーザー表示をリンク       
+        line.enabled = Menu.Instance.isDisplayed;
+
+        ray.direction = transform.forward;
+        ray.origin = transform.position;
+
+        line.SetPosition(0, ray.origin);
+        line.SetPosition(1, ray.GetPoint(100));
     }
 }
