@@ -17,6 +17,7 @@ public class Zombie : MonoBehaviour
     private float injectionVolume = 0f;   //ゾンビ薬の注入量
     private float navSpeed = 0f;
     private bool _isMove = false;
+    [SerializeField]
     private bool _isZombie = false;
     private bool isChange = false;
 
@@ -52,10 +53,8 @@ public class Zombie : MonoBehaviour
     //ゾンビ誘導処理
     public void Move(Vector3 target)
     {
-        {
-            navMesh.speed = navSpeed;
-            navMesh.SetDestination(target);
-        }
+        navMesh.speed = navSpeed;
+        navMesh.SetDestination(target);
 
         //目的地に到着
         if (Vector3.Distance(this.transform.position, target) <= 0.9f)
@@ -67,10 +66,8 @@ public class Zombie : MonoBehaviour
     //プレイヤーに追従
     public void Following(ref Transform playerPos)
     {
-        {
-            navMesh.speed = navSpeed;
-            navMesh.SetDestination(playerPos.position);
-        }
+        navMesh.speed = navSpeed;
+        navMesh.SetDestination(playerPos.position);
 
         //目的地に到着
         if (Vector3.Distance(this.transform.position, playerPos.position) <= 2.0f)
@@ -92,7 +89,7 @@ public class Zombie : MonoBehaviour
         if (!isChange)
         {
             isChange = true;
-            anim.SetTrigger("GetUp");
+            anim.SetBool("GetUp", false);
         }
 
         anim.Update(0);
@@ -100,7 +97,7 @@ public class Zombie : MonoBehaviour
 
         if (stateInfo.IsName("Base Layer.Attack"))
         {
-            if (attackAnimRate <= stateInfo.normalizedTime && stateInfo.normalizedTime < (attackAnimRate + 0.02))
+            if (attackAnimRate <= stateInfo.normalizedTime && stateInfo.normalizedTime < (attackAnimRate + 0.1f))
             {
                 capsuleCol.enabled = true;
             }
@@ -117,6 +114,7 @@ public class Zombie : MonoBehaviour
         if (zombieChangeTime <= injectionVolume)
         {
             _isZombie = true;
+            anim.SetBool("GetUp", true);
         }
     }
 
@@ -125,7 +123,7 @@ public class Zombie : MonoBehaviour
         //障害物破壊
         if (hit.tag == "DestructionObject" && hit.gameObject == destructionTarget)
         {
-            hit.gameObject.GetComponent<DestructionObject>().EnduranceValue();
+            hit.gameObject.GetComponent<DestructionObject>().DecreaseEnduranceValue();
         }
     }
 
@@ -147,7 +145,7 @@ public class Zombie : MonoBehaviour
     //ボーンについているスクリプトから呼ばれる
     public void HitTrigger(Collider hit)
     {
-
+        print(hit.name);
     }
 
     //NavMeshで移動しているか(誘導用)

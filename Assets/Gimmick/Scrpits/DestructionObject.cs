@@ -1,30 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestructionObject : MonoBehaviour {
-    
+public class DestructionObject : MonoBehaviour
+{
     [SerializeField]
-    private int Hp;
+    private int enduranceValue;
     [SerializeField]
     private int decrease;
 
-	void Start ()
+    public void DecreaseEnduranceValue()
     {
-    }
-
-	void Update ()
-    {
-	
-	}
-
-    public void EnduranceValue()
-    {
-        if (Hp != 0)
+        //耐久地減少
+        if (0 < enduranceValue)
         {
-            Hp -= decrease;
-        }else if(Hp<=0)
+            enduranceValue -= decrease;
+        }
+
+        //破壊
+        if (enduranceValue <= 0)
         {
-            Hp = 0;
             Destroy(this.gameObject);
         }
     }
